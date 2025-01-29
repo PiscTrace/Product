@@ -20,6 +20,8 @@ _PiscTrace_ 是一款使用OpenCV(_跨平台计算机视觉库_)、MiDaS(_单目
 
 ![预览窗口](https://github.com/user-attachments/assets/910a2782-0d70-4d6b-bcab-f638311257fe)
 
+**右键选择视图处理**
+
 - 视图处理
 
 ![处理窗口](https://github.com/user-attachments/assets/2c377160-47c3-4bea-a6d1-4df424c4c3dc)
