@@ -46,22 +46,20 @@ _PiscTrace_ 是一款使用OpenCV(_跨平台计算机视觉库_)、MiDaS(_单目
 - 姿态：姿态监控(引体向上、俯卧撑)、姿态轨迹(关键点)
 - 自定义
 视线检测、背景虚化、姿态监控、姿态轨迹为代码形式，自定义代码可以参考代码案例
+
 **注：**自定义代码需要严格遵循新建检测内的类定义结构
-`class Test:`
-
-    `def obj_exe(self, im0, tracks):`
-       ` """`
-       `Generate heatmap based on tracking data.`
-
+  
+```
+class Test:
+    def obj_exe(self, im0, tracks):
+        """
+       Generate heatmap based on tracking data.
         Args:
             im0 (ndarray): Image
             tracks (list): List of tracks obtained from the object tracking process.
         """
-
         self.im0 = im0
-
         self.result = tracks[0]
-
         self.orig_img = self.result.orig_img
         self.orig_shape = self.result.orig_img.shape[:2]
         self.boxes = self.result.boxes  # native size boxes
@@ -76,6 +74,7 @@ _PiscTrace_ 是一款使用OpenCV(_跨平台计算机视觉库_)、MiDaS(_单目
         一些处理逻辑
         """
         return self.im0
+```
 
 # 作者：**那雨倾城**
         
