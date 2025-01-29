@@ -79,6 +79,9 @@ class Test:
 ```
 
 # 作者：**那雨倾城**
-### 扫码关注
-![微信公众号](https://github.com/user-attachments/assets/e1192da4-4449-40d8-bfc9-d8eea68c14dd)
+- 更多详情请关注微信公众号
+![qrcode_for_gh_7617a1a74172_258 1](https://github.com/user-attachments/assets/b6d45b3c-a6a7-4b93-900b-07062a8a9aa2)
+**欢迎关注**
+
+
 
