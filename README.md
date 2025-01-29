@@ -17,9 +17,13 @@ _PiscTrace_ 是一款使用OpenCV(_跨平台计算机视觉库_)、MiDaS(_单目
 ## 操作流程
 - 处理项目：
 支持创建项目、导入已有项目文件包
+
 ![预览窗口](https://github.com/user-attachments/assets/910a2782-0d70-4d6b-bcab-f638311257fe)
+
 -视图处理
+
 ![处理窗口](https://github.com/user-attachments/assets/2c377160-47c3-4bea-a6d1-4df424c4c3dc)
+
 (**注：MiDaS加载需要访问GitHub在线资源**)
 (**注：灰度值与阈值共同开启时可选择二值化蒙版处理**)
 (**注：YOLO处理优先于二值蒙版处理**)
@@ -29,7 +33,9 @@ _PiscTrace_ 是一款使用OpenCV(_跨平台计算机视觉库_)、MiDaS(_单目
 - 预处理：
 `frame = frame`为当前视图帧的像素矩阵，可以在编译器内调通后粘贴到输入框进行运行，例如反色处理`frame = -frame`
 - YOLO数据分析：
+  
 ![处理窗口](https://github.com/user-attachments/assets/a78e65c0-bc87-4bf5-a078-226d03fb97ee)
+
 在加载YOLO后会出现进阶操作，其中预设了
 - 检测框：围栏统计、热力监控、视线检测
 - 实例分割：背景虚化
@@ -39,9 +45,9 @@ _PiscTrace_ 是一款使用OpenCV(_跨平台计算机视觉库_)、MiDaS(_单目
 **注：**自定义代码需要严格遵循新建检测内的类定义结构
 `class Test:`
 
-    def obj_exe(self, im0, tracks):
-        """
-        Generate heatmap based on tracking data.
+    `def obj_exe(self, im0, tracks):`
+       ` """`
+       `Generate heatmap based on tracking data.`
 
         Args:
             im0 (ndarray): Image
