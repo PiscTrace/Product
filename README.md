@@ -3,9 +3,9 @@
 ## 什么是PiscTrace
 _PiscTrace_ 是一款综合性的视图处理桌面应用，集成了 *OpenCV*、*MiDaS* 和 *YOLO*，为用户提供了全面的计算机视觉处理功能。无论是基础的图像预处理，还是复杂的物体检测、深度估计，PiscTrace 都能轻松应对。
 
-### OpenCV >>> https://github.com/opencv/opencv
-### MiDas >>> https://github.com/isl-org/MiDaS
-### YOLO >>> https://github.com/ultralytics
+- OpenCV >>> https://github.com/opencv/opencv
+- MiDas >>> https://github.com/isl-org/MiDaS
+- YOLO >>> https://github.com/ultralytics
 
 ![2e9f56fdf13d47ad88c0a69e7d284ae8](https://github.com/user-attachments/assets/9da81336-cdf3-4866-a09e-789ffe97b298)
 
