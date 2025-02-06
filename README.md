@@ -1,5 +1,8 @@
 # PiscTrace使用说明
-_PiscTrace_ 是一款使用OpenCV(_跨平台计算机视觉库_)、MiDaS(_单目景深估计_)、YOLO(_CNN视觉检测_)的视图处理桌面应用
+_PiscTrace_ 是一款综合性的视图处理桌面应用，集成了 *OpenCV*、*MiDaS* 和 *YOLO*，为用户提供了全面的计算机视觉处理功能。无论是基础的图像预处理，还是复杂的物体检测、深度估计，PiscTrace 都能轻松应对。
+
+![2e9f56fdf13d47ad88c0a69e7d284ae8](https://github.com/user-attachments/assets/9da81336-cdf3-4866-a09e-789ffe97b298)
+
 ## 功能概述
 ### 输入格式
 支持本地图片、本地视频、在线视频流和摄像头视频流的处理
@@ -14,34 +17,27 @@ _PiscTrace_ 是一款使用OpenCV(_跨平台计算机视觉库_)、MiDaS(_单目
 均值、高斯、中值
 - YOLO:
 检测框、实例分割、姿态、带方向检测框
-## 操作流程
-- 处理项目：
-支持创建项目、导入已有项目文件包
-
-![预览窗口](https://github.com/user-attachments/assets/910a2782-0d70-4d6b-bcab-f638311257fe)
-
-**右键选择视图处理**
-
-- 视图处理
-
-![处理窗口](https://github.com/user-attachments/assets/2c377160-47c3-4bea-a6d1-4df424c4c3dc)
-
-- **注：** MiDaS加载需要访问GitHub在线资源
-- **注：** 灰度值与阈值共同开启时可选择二值化蒙版处理
-- **注：** YOLO处理优先于二值蒙版处理
-## 导出并保存
-- 支持保存视频的逐帧切片
-- 支持导出视图的渲染结果
-- 保存路径为：项目文件夹地址/save
-  
 ## 编码插件
 针对一些复杂的视图处理，PiscTrace分别提供了OpenCV预处理的接口和YOLO预测数据分析的接口!
 ## 预处理：
-`frame = frame`为当前视图帧的像素矩阵，可以在编译器内调通后粘贴到输入框进行运行，例如反色处理`frame = -frame`
-## YOLO数据分析：
-  
-![处理窗口](https://github.com/user-attachments/assets/a78e65c0-bc87-4bf5-a078-226d03fb97ee)
+```
+class FrameObject:
+    def __init__(self):
+        self.init_parameters()
 
+    def init_parameters(self, *args, **kwargs):
+        pass
+
+    def do(self, frame, device):
+    
+        return frame
+```
+**注：** 自定义代码需要严格遵循新建检测内的类定义结构
+
+为当前视图帧的像素矩阵，可以在编译器内调通后粘贴到输入框进行运行，例如反色处理`return -frame`
+### 实验室: > https://blog.csdn.net/weixin_43607107/article/details/145441732
+
+## YOLO数据分析：
 在加载YOLO后会出现进阶操作，其中预设了
 - 检测框：围栏统计、热力监控、视线检测
 - 实例分割：背景虚化
