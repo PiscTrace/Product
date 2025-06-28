@@ -81,10 +81,12 @@ class Test:
 ```
 
 ## 作者：**那雨倾城**
-### 更多详情请关注微信公众号
-![qrcode_for_gh_7617a1a74172_258 1](https://github.com/user-attachments/assets/b6d45b3c-a6a7-4b93-900b-07062a8a9aa2)
-### CSDN合集：> https://blog.csdn.net/weixin_43607107/category_12885488.html
-### **欢迎关注**
+## Download
+- [PiscTrace](https://blog.csdn.net/weixin_43607107/category_12885488.html)
+- [PiscCode](https://github.com/PiscTrace/Product/releases/tag/PiscCode)
+
+### 诚邀合作 ###
+
 
 
 
