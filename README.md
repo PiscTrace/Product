@@ -82,7 +82,7 @@ class Test:
 
 ## 作者：**那雨倾城**
 ## Download
-- [PiscTrace](https://blog.csdn.net/weixin_43607107/category_12885488.html)
+- [PiscTrace](https://github.com/PiscTrace/Product/releases/tag/PiscTrace)
 - [PiscCode](https://github.com/PiscTrace/Product/releases/tag/PiscCode)
 
 ### 诚邀合作 ###
