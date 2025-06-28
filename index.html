@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeTrace 影迹</title>
+    <style>
+        /* 基本设置 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(0deg, #c47f25, #17a6fb, #facb23, #5943ed);
+            background-size: 400% 400%;
+            animation: gradientBG 48s ease infinite;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+
+        /* 头部样式 */
+        header {
+            background-color: #f0f0f0;
+            color: #333;
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            height: 60px;
+            box-sizing: border-box;
+        }
+
+        .header-content {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            max-width: 50px;
+            max-height: 50px;
+            height: auto;
+            margin-right: 10px;
+        }
+
+        .company-name-chinese {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        .header-center {
+            flex: 2;
+            display: flex;
+            justify-content: center;
+        }
+
+        .company-name-english {
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        /* 容器样式 */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            padding-top: 50px;
+            padding-bottom: 60px;
+            box-sizing: border-box;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* 功能展示和信息扩展的样式 */
+        .features, .info-extended {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            box-sizing: border-box;
+            align-items: stretch;
+        }
+
+        .feature, .info-item {
+            background: #DDFFFFFF;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+            flex: 1 1 calc(33.333% - 20px);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* 确保内容从顶部开始对齐 */
+            align-items: flex-start; /* 顶部左对齐 */
+            text-align: left; /* 左对齐文本内容 */
+        }
+
+        /* 调整 <h4> 标签的样式，设置上下边距 */
+        h4 {
+            margin: 5px 0; /* 设置上下边距为5px，左右边距为0 */
+        }
+
+        /* 调整 <p> 标签的样式，清除默认边距 */
+        .info-item p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .info-item:nth-child(4) {
+            flex: 1 1 200px;
+        }
+
+        /* 页脚样式 */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            width: 100%;
+            box-sizing: border-box;
+            position: fixed;
+            bottom: 0;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-content">
+        <div class="header-left">
+            <img src="../icon/logo.png" alt="公司Logo" class="logo">
+            <div class="company-name-chinese">影迹</div>
+        </div>
+        <div class="header-center">
+            <div class="company-name-english">CodeTrace</div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="content">
+        <section id="features">
+            <h2 style="color: white;">产品功能</h2>
+            <div class="features">
+                <div class="feature">
+                    <p>CodeTrace 是一款基于 OpenCV 的 Python 视觉处理工具，专为桌面应用设计，支持对图片、视频以及实时摄像头流进行多种图像处理和分析。它不仅提供了用户编写并运行自定义的 Python 代码，同时具备实时预览功能，使用户能够在处理过程中动态调整参数并优化效果，以满足不同的应用需求。此外，CodeTrace 充分利用硬件加速技术，支持 GPU 并行计算，大幅提升处理效率，特别适用于计算机视觉开发、人工智能应用、视频监控分析以及其他高性能视觉计算场景，为开发者提供了一种灵活、高效且易用的解决方案。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="grade-info">
+            <h2 style="color: white;">版本功能</h2>
+            <table border="1" cellpadding="10" cellspacing="0"
+                   style="width: 100%; border-collapse: collapse; color: white; border: 1px solid white;">
+                <thead>
+                <tr>
+                    <th style="border: 1px solid white; text-align: center; vertical-align: middle;">版本</th>
+                    <th style="border: 1px solid white; text-align: center; vertical-align: middle;">本地图片</th>
+                    <th style="border: 1px solid white; text-align: center; vertical-align: middle;">本地视频</th>
+                    <th style="border: 1px solid white; text-align: center; vertical-align: middle;">网络视频</th>
+                    <th style="border: 1px solid white; text-align: center; vertical-align: middle;">保存处理</th>
+                    <th style="border: 1px solid white; text-align: center; vertical-align: middle;">摄像头</th>
+                    <th style="border: 1px solid white; text-align: center; vertical-align: middle;">密钥</th>
+                    <th style="border: 1px solid white; text-align: center; vertical-align: middle;">价格</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td style="border: 1px solid white; text-align: center; vertical-align: middle;">Note</td>
+                    <td style="border: 1px solid white; text-align: center; vertical-align: middle;">✅</td>
+                    <td style="border: 1px solid white; text-align: center; vertical-align: middle;">✅</td>
+                    <td style="border: 1px solid white; text-align: center; vertical-align: middle;">✅</td>
+                    <td style="border: 1px solid white; text-align: center; vertical-align: middle;">❌</td>
+                    <td style="border: 1px solid white; text-align: center; vertical-align: middle;">❌</td>
+                    <td style="border: 1px solid white; text-align: center; vertical-align: middle;">✅</td>
+                    <td style="border: 1px solid white; text-align: center; vertical-align: middle;">？</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid white; text-align: center; vertical-align: middle;">Plus</td>
+                    <td style="border: 1px solid white; text-align: center; vertical-align: middle;">✅</td>
+                    <td style="border: 1px solid white; text-align: center; vertical-align: middle;">✅</td>
+                    <td style="border: 1px solid white; text-align: center; vertical-align: middle;">✅</td>
+                    <td style="border: 1px solid white; text-align: center; vertical-align: middle;">✅</td>
+                    <td style="border: 1px solid white; text-align: center; vertical-align: middle;">❌</td>
+                    <td style="border: 1px solid white; text-align: center; vertical-align: middle;">✅</td>
+                    <td style="border: 1px solid white; text-align: center; vertical-align: middle;">？</td>
+                </tr>
+                <tr>
+                    <td style="border: 1px solid white; text-align: center; vertical-align: middle;">Pro</td>
+                    <td style="border: 1px solid white; text-align: center; vertical-align: middle;">✅</td>
+                    <td style="border: 1px solid white; text-align: center; vertical-align: middle;">✅</td>
+                    <td style="border: 1px solid white; text-align: center; vertical-align: middle;">✅</td>
+                    <td style="border: 1px solid white; text-align: center; vertical-align: middle;">✅</td>
+                    <td style="border: 1px solid white; text-align: center; vertical-align: middle;">✅</td>
+                    <td style="border: 1px solid white; text-align: center; vertical-align: middle;">✅</td>
+                    <td style="border: 1px solid white; text-align: center; vertical-align: middle;">？</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </div>
+</div>
+
+<footer>
+    <p>CodeTrace &copy; 2024 . 9 </p>
+</footer>
+</body>
+</html>
