@@ -27,7 +27,7 @@
 <body>
 
   <!-- ================ start nav bar=========== -->
-  <nav class="navbar navbar-expand-md main-menu">
+  <!-- <nav class="navbar navbar-expand-md main-menu">
     <div class="container">
       <a class="navbar-brand" href=""><img src="static/picture/logo-10.png" alt=""></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,7 +62,7 @@
         </ul>
       </div>
     </div>
-  </nav>
+  </nav> -->
   
   <!-- Search Modal -->
   <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
@@ -96,11 +96,14 @@
           <div class="wow animate__animated animate__fadeInLeft banner-text">
             <h1>PiscTrace</h1>
             <h4>功能强大的机器视觉桌面应用</h4>
-            <p>无论是静态图片、实时视频流、摄像头视频流，还是网络视频流，PiscTrace 都能高效地进行处理、分析和渲染。通过整合 OpenCV、MiDaS 和 YOLO 等先进技术，PiscTrace 成为一款适用于多种应用场景的视觉分析工具。</p>
-            <div class="main-btn">
+            <p>无论是静态图片、实时视频流、摄像头视频流，还是网络视频流<br>
+              都能高效地进行处理、分析和渲染<br>
+              通过整合 OpenCV、MiDaS 和 YOLO 等先进技术<br>
+              成为一款适用于多种应用场景的视觉分析工具。</p>
+            <!-- <div class="main-btn">
               <a class="shadow__btn" href="contact.html"> Explore More</a>
               
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="col-md-6"></div>
@@ -116,7 +119,7 @@
       <div class="row ">
         <div class="wow animate__animated animate__fadeInLeft col-md-4">
           <div class="gallery-img">
-            <img src="static/picture/banner-2.jpg" class="w-100" alt="">
+            <img src="static/picture/box.jpg" class="w-100" alt="">
           </div>
           <div class="gallery-text text-center mt-3">
             <h4>对象检测</h4>
@@ -124,7 +127,7 @@
         </div>
         <div class="wow animate__animated animate__fadeInUp col-md-4">
           <div class="gallery-img">
-            <img src="static/picture/banner-1.jpg" class="w-100" alt="">
+            <img src="static/picture/seg.jpg" class="w-100" alt="">
           </div>
           <div class="gallery-text text-center mt-3">
             <h4>实例分割</h4>
@@ -132,7 +135,7 @@
         </div>
         <div class="wow animate__animated animate__fadeInRight col-md-4">
           <div class="gallery-img">
-            <img src="static/picture/banner-3.jpg" class="w-100" alt="">
+            <img src="static/picture/pose.jpg" class="w-100" alt="">
           </div>
           <div class="gallery-text text-center mt-3">
             <h4>姿态估计</h4>
@@ -151,12 +154,12 @@
           <div class="row mt-5">
             <div class="wow animate__animated animate__fadeInUp col-md-6 col-sm-6">
               <div class="explore-content d-flex">
-                <img src="static/picture/banner-1.jpg" class="img-fluid w-100" alt="">
+                <img src="static/picture/cv.png" class="img-fluid w-100" alt="">
               </div>
             </div>
             <div class="wow animate__animated animate__fadeInUp col-md-6 col-sm-6">
               <div class="explore-content d-flex">
-                <img src="static/picture/banner-2.jpg" class="img-fluid w-100" alt="">
+                <img src="static/picture/yolo_midas.png" class="img-fluid w-100" alt="">
               </div>
             </div>
           </div>
@@ -191,10 +194,12 @@
         <div class="col-md-6">
           <div class="wow animate__animated animate__fadeInUp explore-right">
             <h2><span>YOLO & MiDaS <br> OpenCV </span> 强力加持</h2>
-            <p>集成了 OpenCV、MiDaS 和 YOLO 技术的桌面应用，致力于为用户提供高效的图像和视频流处理解决方案。无论是静态图片、实时视频流、摄像头视频流还是网络视频流，PiscTrace 都能快速处理、分析并渲染输出。通过其强大的图像预处理和物体检测功能，PiscTrace 在智能监控、自动驾驶、工业检测、增强现实等领域展现出广泛的应用潜力。</p>
-            <div class="main-btn">
+            <p>集成了 OpenCV、MiDaS 和 YOLO 技术的桌面应用，致力于为用户提供高效的图像和视频流处理解决方案。<br>
+              无论是静态图片、实时视频流、摄像头视频流还是网络视频流，PiscTrace 都能快速处理、分析并渲染输出。<br>
+              通过其强大的图像预处理和物体检测功能，在智能监控、自动驾驶、工业检测、增强现实等领域展现出广泛的应用潜力。</p>
+            <!-- <div class="main-btn">
               <a class="shadow__btn" href="about.html">Read More</a>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
@@ -210,19 +215,24 @@
         <div class="col-md-6 text-light order-2 order-md-1 order-lg-1">
           <div class="wow animate__animated animate__fadeInLeft section-left">
             <h2><span>插件化编程接口</span> 个性需求</h2>
-            <p class="pera-1">提供了自定义接口的支持，允许用户加载和使用自定义的计算机视觉模型和算法。通过简单的接口配置，用户可以将自己的深度学习模型、算法或其他库集成到平台中，实现更加个性化的功能需求。
+            <p class="pera-1">提供了自定义接口的支持<br>
+              允许用户加载和使用自定义的计算机视觉模型和算法<br>
+              通过简单的接口配置<br>
+              用户可以将自己的深度学习模型<br>
+              算法或其他库集成到平台中<br>
+              实现更加个性化的功能需求
                 <!-- <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut tempore, ad doloribus omnis
                   dolorum pariatur ipsam ullam quos saepe laudantium nisi. Molestiae quam eum quos? Beatae
                   vero dolores sit eius.</span> -->
             </p>
-            <div class="main-btn">
+            <!-- <div class="main-btn">
               <a class="shadow__btn" href="about.html">Read More</a>
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="col-md-5 m-auto order-1 order-md-2 order-lg-2">
           <div class="wow animate__animated animate__fadeInRight section-right">
-            <img src="static/picture/about.jpg" class="w-100" alt="">
+            <img src="static/picture/code.png" class="w-100" alt="">
           </div>
         </div>
       </div>
@@ -250,15 +260,15 @@
                 <div class="overly"></div>
                 <ul class="wow animate__animated animate__fadeInUp d-flex flex-wrap" data-wow-delay=".3s">
                   <li class="mixitup-control-active" data-filter="all">All</li>
-                  <li data-filter=".vr_product">OpenCV</li>
-                  <li data-filter=".vr_game">YOLO</li>
-                  <li data-filter=".vr_technology">MiDaS</li>
-                  <li data-filter=".vr_application">DIY</li>
+                  <li data-filter=".opencv">OpenCV</li>
+                  <li data-filter=".yolo">YOLO</li>
+                  <li data-filter=".midas">MiDaS</li>
+                  <li data-filter=".diy">DIY</li>
                 </ul>
                 
               </div>
               <div class="wow animate__animated animate__fadeInUp filter_img">
-                <div class="img mix vr_technology">
+                <div class="img mix midas">
                   <img src="static/picture/banner-1.jpg" alt="gallery_img1">
                  
                   <div class="overly">
@@ -267,69 +277,69 @@
                   </div>
 
                 </div>
-                <div class="img mix vr_product">
+                <div class="img mix opencv">
                   <img src="static/picture/banner-3.jpg" alt="gallery_img2">
                   <div class="overly">
                     <a class="venobox" data-gall="gallery01" href="static/picture/banner-3.jpg"><i class="fa-solid fa-plus"></i></a>
                   </div>
 
                 </div>
-                <div class="img mix vr_product">
+                <div class="img mix opencv">
                   <img src="static/picture/gallery_img3.jpg" alt="gallery_img3">
                   <div class="overly">
                     <a class="venobox" data-gall="gallery01" href="static/picture/gallery_img3.jpg"><i class="fa-solid fa-plus"></i></a>
                   </div>
                 </div>
-                <div class="img mix vr_product">
+                <div class="img mix opencv">
                   <img src="static/picture/banner-2.jpg" alt="gallery_img4">
                   <div class="overly">
                     <a class="venobox" data-gall="gallery01" href="static/picture/banner-2.jpg"><i class="fa-solid fa-plus"></i></a>
                   </div>
 
                 </div>
-                <div class="img mix vr_game">
+                <div class="img mix yolo">
                   <img src="static/picture/gallery_img5.jpg" alt="gallery_img5">
                   <div class="overly">
                     <a class="venobox" data-gall="gallery01" href="static/picture/gallery_img5.jpg"><i class="fa-solid fa-plus"></i></a>
                   </div>
                 </div>
-                <div class="img mix vr_technology">
+                <div class="img mix midas">
                   <img src="static/picture/gallery_img6.jpg" alt="gallery_img6">
                   <div class="overly">
                     <a class="venobox" data-gall="gallery01" href="static/picture/gallery_img6.jpg"><i class="fa-solid fa-plus"></i></a>
                   </div>
                 </div>
-                <div class="img mix vr_game">
+                <div class="img mix yolo">
                   <img src="static/picture/gallery_img7.jpg" alt="gallery_img7">
                   <div class="overly">
                     <a class="venobox" data-gall="gallery01" href="static/picture/gallery_img7.jpg"><i class="fa-solid fa-plus"></i></a>
                   </div>
                 </div>
-                <div class="img mix vr_application">
+                <div class="img mix diy">
                   <img src="static/picture/gallery_img12.jpg" alt="gallery_img12">
                   <div class="overly">
                     <a class="venobox" data-gall="gallery01" href="static/picture/gallery_img12.jpg"><i class="fa-solid fa-plus"></i></a>
                   </div>
                 </div>
-                <div class="img mix vr_application">
+                <div class="img mix diy">
                   <img src="static/picture/gallery_img9.jpg" alt="gallery_img9">
                   <div class="overly">
                     <a class="venobox" data-gall="gallery01" href="static/picture/gallery_img9.jpg"><i class="fa-solid fa-plus"></i></a>
                   </div>
                 </div>
-                <div class="img mix vr_application">
+                <div class="img mix diy">
                   <img src="static/picture/gallery_img10.jpg" alt="gallery_img10">
                   <div class="overly">
                     <a class="venobox" data-gall="gallery01" href="static/picture/gallery_img10.jpg"><i class="fa-solid fa-plus"></i></a>
                   </div>
                 </div>
-                <div class="img mix vr_game">
-                  <img src="static/picture/banner-1.jpg" alt="gallery_img1">
+                <div class="img mix yolo">
+                  <img src="static/picture/3456561de8e04239b051a336d91d4500.gif" alt="gallery_img1">
                   <div class="overly">
                     <a class="venobox" data-gall="gallery01" href="static/picture/banner-1.jpg"><i class="fa-solid fa-plus"></i></a>
                   </div>
                 </div>
-                <div class="img mix vr_game">
+                <div class="img mix yolo">
                   <img src="static/picture/gallery_img12.jpg" alt="gallery_img12">
                   <div class="overly">
                     <a class="venobox" data-gall="gallery01" href="static/picture/gallery_img12.jpg"><i class="fa-solid fa-plus"></i></a>
@@ -366,7 +376,7 @@
                     <h2>Basic</h2>
                   </div>
                   <div class="price">
-                    <h4><sup>$</sup>25</h4>
+                    <h4><sup>￥</sup>9.9</h4>
                   </div>
                   <div class="option">
                     <ul>
@@ -386,7 +396,7 @@
                     <h2>Standard</h2>
                   </div>
                   <div class="price">
-                    <h4><sup>$</sup>50</h4>
+                    <h4><sup>￥</sup>99.9</h4>
                   </div>
                   <div class="option">
                     <ul>
@@ -406,7 +416,7 @@
                     <h2>Premium</h2>
                   </div>
                   <div class="price">
-                    <h4><sup>$</sup>100</h4>
+                    <h4><sup>￥</sup>199.9</h4>
                   </div>
                   <div class="option">
                     <ul>
@@ -432,43 +442,52 @@
       <div class="row">
         <div class="col-md-5">
           <div class="wow animate__animated animate__fadeInLeft common-heading mb-5">
-            <h4 class="pre-title">适用人群<span>About Us</span></h4>
-            <p>我们希望您是一个热爱探索，喜欢动手，对机器视觉感兴趣的人</p>
+            <h4 class="pre-title">适用人群
+              <!-- <span>About Us</span> -->
+            </h4>
+            <p>我们希望您是一位对新技术充满好奇，乐于动手实践，具备持续学习能力的人。<br>
+              您对机器视觉领域抱有浓厚兴趣，能够主动探索前沿技术，深入理解图像处理原理，并将其应用于实际项目中。<br>
+              我们期待与您共同推动创新，为视觉智能的发展贡献力量。</p>
           </div>
         </div>
         <div class="wow animate__animated animate__fadeInRight col-md-7">
           <div class="slider-indicator" data-wow-delay=".2s">
-            <img src="static/picture/testimonial-01.png" class="active" alt="img" data-id="0">
-            <img src="static/picture/testimonial-03.png" alt="img" data-id="1">
-            <img src="static/picture/testimonial-02.png" alt="img" data-id="2">
+            <img src="static/picture/student.png" class="active" alt="img" data-id="0">
+            <img src="static/picture/doctor.png" alt="img" data-id="1">
+            <img src="static/picture/other.png" alt="img" data-id="2">
           </div>
 
           <div class="slider">
             <div class="slide active">
               <p>
-               我是学生!
+               我是一名对人工智能，尤其是机器视觉领域充满兴趣的学生。<br>
+               一直以来，我都喜欢动手实践，通过亲自参与项目来加深对图像处理与视觉算法的理解。<br>
+               这个平台对我而言是一个非常宝贵的机会，让我能够专注于图像和视频的处理工作，在实际应用中提升自己的技术能力，也为将来深入AI领域打下坚实的基础。
               </p>
               <div class="client-info">
-                <h3>Elisa</h3>
-                <span>Founder at Zach</span>
+                <h3>入门学生</h3>
+                <!-- <span>学生</span> -->
               </div>
             </div>
             <div class="slide">
               <p>
-               机器视觉爱好者!
+               我并不是一名专业的开发人员，但在日常的实验工作中，我经常需要用到图像采集和处理相关的监控功能。<br>
+               借助这个平台，在不需要太多开发背景的前提下，也能实现高效、稳定的图像处理和视觉分析，为实验提供有力支持，同时逐步提升自己的技术理解和应用能力。
               </p>
               <div class="client-info">
-                <h3>Natasha</h3>
-                <span>Founder at Welling</span>
+                <h3>实验研究</h3>
+                <!-- <span>实验室</span> -->
               </div>
             </div>
             <div class="slide">
               <p>
-                虚拟现实探索。
+                我对机器视觉充满兴趣，尤其对图像采集和处理的应用场景非常好奇。<br>
+                但在实际接触中我发现，完整的处理过程对于非专业背景的人来说门槛较高、过程繁琐。<br>
+                这样一个更友好、可操作性强的平台，专注于图像处理本身，减少不必要的技术负担，让我能够更专注地学习和探索这个领域的核心价值。
               </p>
               <div class="client-info">
-                <h3>Jack</h3>
-                <span>Founder at Zim</span>
+                <h3>热心群众</h3>
+                <!-- <span>痴迷爱好者</span> -->
               </div>
             </div>
           </div>
@@ -479,80 +498,18 @@
   <!-- testimonial end -->
 
   <!-- footer start -->
+   
   <footer class="footer-section">
-    <div class="container">
-      <div class="wow animate__animated animate__fadeInUp footer-content pt-5 pb-5" data-wow-delay=".2s">
-        <div class="row">
-          <div class="col-lg-4 col-xl-4 col-lg-4 mb-50">
-            <div class="footer-widget">
-              <div class="footer-logo">
-                <a class="navbar-brand" href="#"><img src="static/picture/logo-10.png" alt=""></a>
-              </div>
-              <div class="footer-text">
-                <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec
-                  tetur adipisicing
-                  elit,Lorem ipsum dolor sit amet.</p>
-              </div>
-              <div class="social-icon d-flex">
-                <!-- <span>Follow us</span> -->
-                <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
-                <!-- github -->
-                <a href="#"><i class="fab fa-github github-bg"></i></a>
-                <!-- linkedin -->
-                <a href="#"><i class="fab fa-linkedin-in linkedin-bg"></i></a>
-                <!-- youtube -->
-                <a href="#"><i class="fab fa-youtube youtube-bg"></i></a>
-
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-xl-4 col-lg-4 col-md-6 mb-30">
-            <div class="footer-widget">
-              <div class="footer-widget-heading">
-                <h3>Useful Links</h3>
-              </div>
-              <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">about</a></li>
-                <li><a href="#">services</a></li>
-                <li><a href="#">portfolio</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Our Services</a></li>
-                <li><a href="#">Expert Team</a></li>
-                <li><a href="#">Contact us</a></li>
-                <li><a href="#">Latest News</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-4 col-xl-4 col-lg-4 col-md-6 mb-50">
-            <div class="footer-widget">
-              <div class="footer-widget-heading">
-                <h3>Subscribe</h3>
-              </div>
-              <div class="footer-text mb-25">
-                <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>
-              </div>
-              <div class="subscribe-form">
-                <form action="#">
-                  <input type="text" placeholder="Email Address">
-                  <button><i class="fab fa-telegram-plane"></i></button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+   
     <div class="copyright-area">
       <div class="container">
         <div class="row">
           <div class="col-lg-6 col-lg-6 text-center text-lg-left">
             <div class="copyright-text">
-              <p>Copyright &copy; 2024.Company name All rights reserved.<a target="_blank" href="https://www.toymoban.com/htmlmoban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+              <p>WeDo &copy; 2025.PiscTrace.<a target="_blank" >那雨倾城</a></p>
             </div>
           </div>
-          <div class="col-lg-6 col-lg-6 d-none d-lg-block text-right">
+          <!-- <div class="col-lg-6 col-lg-6 d-none d-lg-block text-right">
             <div class="footer-menu">
               <ul>
                 <li><a href="#">Home</a></li>
@@ -562,7 +519,7 @@
                 <li><a href="#">Contact</a></li>
               </ul>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
