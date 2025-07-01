@@ -387,31 +387,8 @@
                       <li><i class="fa fa-check" aria-hidden="true"></i> DIY 开发接口</li>
                     </ul>
                   </div>
-                  <a id="downloadBtn" href="https://github.com/PiscTrace/Product/releases/tag/PiscTrace">Download ></a>
-
-  <script>
-    console.log("开始检测访问者的国家...");
-
-    fetch('http://ip-api.com/json')
-      .then(response => response.json())
-      .then(data => {
-        console.log("IP 来源国家：", data.country);
-
-        if (data.country === 'China') {
-          console.log("检测到中国访问者，切换为 GitCode 下载链接");
-          document.getElementById('downloadBtn').href = "https://gitcode.com/weixin_43607107/PiscTrace/releases/download/PiscTrace/PiscTrace-%E5%BD%B1%E8%BF%B9.zip";
-          document.getElementById('downloadBtn').textContent = "下载";
-        } else {
-          console.log("非中国访问者，保持 GitHub 下载链接");
-        }
-      })
-      .catch(error => {
-        console.warn("获取地理位置失败，使用默认 GitHub 链接。", error);
-      });
-  </script>
-
                   <!-- <a href="https://github.com/PiscTrace/Product/releases/tag/PiscTrace">Download ></a> -->
-                  <!-- <a href="https://gitcode.com/weixin_43607107/PiscTrace/releases/download/PiscTrace/PiscTrace-影迹.zip">Download ></a> -->
+                  <a href="https://gitcode.com/weixin_43607107/PiscTrace/releases/download/PiscTrace/PiscTrace-影迹.zip">Download ></a>
                 </div>
               </div>
               <div class="col-sm-4">
@@ -433,7 +410,7 @@
                     </ul>
                   </div>
                   <!-- <a href="https://github.com/PiscTrace/Product/releases/tag/PiscCode">Download ></a> -->
-                  <!-- <a href="https://gitcode.com/weixin_43607107/PiscTrace/releases/download/PiscCode/PiscCode-影迹.zip">Download ></a> -->
+                  <a href="https://gitcode.com/weixin_43607107/PiscTrace/releases/download/PiscCode/PiscCode-影迹.zip">Download ></a>
                 </div>
               </div>
               <div class="col-sm-4">
