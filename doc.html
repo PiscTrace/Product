@@ -154,7 +154,7 @@
         }
         
         a:hover {
-            color: #FFFFFF;
+            color: #EB22CB;
             text-decoration: underline;
         }
         
@@ -205,7 +205,7 @@
         }
         
         blockquote {
-            border-left: 4px solid #FFFFFF;
+            border-left: 4px solid #EB22CB;
             padding: 10px 20px;
             margin: 20px 0;
             background: rgba(235, 34, 203, 0.05);
@@ -269,7 +269,7 @@
     <!-- 左侧目录 -->
     <div class="sidebar">
         <div class="sidebar-header">
-            <h2>项目文档</h2>
+            <h2></h2>
         </div>
         <div id="toc"></div>
     </div>
@@ -350,30 +350,8 @@
                 console.error(error);
                 
                 // 使用备用内容
-                const fallbackMd = `# 示例文档
-
-## 欢迎使用
-这是自动生成的示例内容
-
-## 快速开始
-\`\`\`bash
-npm install
-npm start
-\`\`\`
-
-## 功能特点
-- 基于现代Web技术
-- 响应式设计
-- 美观的UI界面
-
-## 配置选项
-| 参数 | 默认值 | 说明 |
-|------|--------|------|
-| port | 3000   | 服务端口 |
-| host | localhost | 服务地址 |
-
-> 提示：这是一个示例文档，请替换为您的实际内容
-`;
+                const fallbackMd = `# 
+                ## 欢迎使用PiscTrace`;
                 document.getElementById('content').innerHTML = marked.parse(fallbackMd);
                 // ...同样处理章节和目录...
             });
