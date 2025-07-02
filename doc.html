@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>项目文档</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <style>
+     <style>
         /* 基础重置 */
         * {
             margin: 0;
@@ -16,7 +16,7 @@
         
         :root {
             --brand: #1b0133;
-            --subclr: #fff;
+            --subclr: #fff; /* 纯白色 */
             --text-clr: #444;
             --gradient: linear-gradient(to right, #EB22CB 0%, #30CFD0 100%);
             --ff1: 'Poppins', sans-serif;
@@ -45,13 +45,12 @@
         
         .sidebar-header {
             margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(112, 100, 228, 0.3);
         }
         
         .sidebar-header h2 {
-            background: var(--gradient);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--subclr); /* 纯白色 */
             font-size: 24px;
             font-weight: 600;
         }
@@ -60,12 +59,11 @@
             padding: 12px 15px;
             margin: 5px 0;
             cursor: pointer;
-            color: var(--subclr);
+            color: var(--subclr); /* 纯白色 */
             font-size: 16px;
             border-radius: 6px;
             transition: all 0.3s ease;
             position: relative;
-            overflow: hidden;
         }
         
         .toc-item:hover {
@@ -76,22 +74,6 @@
             background: rgba(235, 34, 203, 0.2);
             border-left: 3px solid #EB22CB;
             font-weight: 600;
-        }
-        
-        .toc-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 3px;
-            height: 100%;
-            background: var(--gradient);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .toc-item:hover::before {
-            opacity: 1;
         }
         
         /* 右侧内容 */
@@ -116,12 +98,9 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* 内容样式 */
-        h1, h2, h3, h4 {
-            background: var(--gradient);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* 标题样式 - 统一纯白色 */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--subclr); /* 纯白色 */
             margin: 25px 0 15px;
             font-weight: 600;
         }
@@ -141,6 +120,7 @@
             font-size: 22px;
         }
         
+        /* 内容样式 */
         p {
             line-height: 1.8;
             margin-bottom: 20px;
