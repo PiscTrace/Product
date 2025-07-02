@@ -273,40 +273,34 @@
                         currentSection.className = 'content-section';
                         currentSection.id = 'section-' + node.textContent.toLowerCase().replace(/\s+/g, '-');
                         node.parentNode.insertBefore(currentSection, node);
-                        
                         currentSection.appendChild(node);
-
-                        // 继续添加该章节下的内容
-                        let nextNode = node.nextElementSibling;
-                        while (nextNode && !nextNode.nodeName.match(/^H[1-3]$/)) {
-                            currentSection.appendChild(nextNode);
-                            nextNode = nextNode.nextElementSibling;
-                        }
-                    }
-                });
-
-                // 生成目录导航
-                document.querySelectorAll('.content-section > h1, .content-section > h2').forEach((heading, index) => {
-                    const tocItem = document.createElement('div');
-                    tocItem.className = `toc-item level-${heading.nodeName[1]}`;
-                    tocItem.textContent = heading.textContent;
-                    tocItem.dataset.section = heading.parentNode.id;
-
-                    tocItem.addEventListener('click', () => {
-                        // 更新目录高亮
-                        document.querySelectorAll('.toc-item').forEach(item => {
-                            item.classList.remove('active');
-                        });
-                        tocItem.classList.add('active');
                         
-                        // 切换章节显示
-                        document.querySelectorAll('.content-section').forEach(section => {
-                            section.classList.remove('active');
-                        });
-                        document.getElementById(tocItem.dataset.section).classList.add('active');
-                    });
+                        // 添加相应的层级类
+                        const tocItem = document.createElement('div');
+                        tocItem.className = `toc-item level-${level}`;
+                        tocItem.textContent = node.textContent;
+                        tocItem.dataset.section = currentSection.id;
 
-                    document.getElementById('toc').appendChild(tocItem);
+                        tocItem.addEventListener('click', () => {
+                            // 更新目录高亮
+                            document.querySelectorAll('.toc-item').forEach(item => {
+                                item.classList.remove('active');
+                            });
+                            tocItem.classList.add('active');
+                            
+                            // 切换章节显示
+                            document.querySelectorAll('.content-section').forEach(section => {
+                                section.classList.remove('active');
+                            });
+                            document.getElementById(tocItem.dataset.section).classList.add('active');
+                        });
+
+                        document.getElementById('toc').appendChild(tocItem);
+                    } else if (currentSection) {
+                        // 将内容添加到当前章节
+                        currentSection.appendChild(node.cloneNode(true));
+                        node.remove();
+                    }
                 });
 
                 // 默认显示第一个章节
