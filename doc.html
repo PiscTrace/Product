@@ -263,7 +263,7 @@
                 const nodes = document.getElementById('content').childNodes;
                 
                 // 遍历所有节点，包裹章节
-               Array.from(nodes).forEach(node => {
+            Array.from(nodes).forEach(node => {
     if (node.nodeName.match(/^H[1-3]$/)) {
         // 获取标题的层级
         const level = parseInt(node.nodeName[1]);
@@ -275,18 +275,24 @@
         node.parentNode.insertBefore(currentSection, node);
         currentSection.appendChild(node);
         
-        // 检查该章节是否有正文或子章节
+        // 检查该标题后面是否有正文或子标题
+        let nextNode = node.nextElementSibling;
         let hasContent = false;
-        let nextSibling = node.nextElementSibling;
 
-        // 遍历直到下一个标题为止，检查正文或子章节
-        while (nextSibling && !nextSibling.nodeName.match(/^H[1-3]$/)) {
-            hasContent = true;
-            currentSection.appendChild(nextSibling);
-            nextSibling = nextSibling.nextElementSibling;
+        while (nextNode) {
+            if (nextNode.nodeName.match(/^H[1-3]$/)) {
+                // 如果遇到下一个标题，结束当前章节
+                break;
+            }
+            // 检查是否有内容，如果是正文或者其他内容
+            if (nextNode.nodeName !== 'H1' && nextNode.nodeName !== 'H2' && nextNode.nodeName !== 'H3') {
+                hasContent = true;
+                currentSection.appendChild(nextNode);
+            }
+            nextNode = nextNode.nextElementSibling;
         }
 
-        // 如果该章节没有正文或子章节，则删除该章节
+        // 如果该章节没有内容，则移除
         if (!hasContent) {
             currentSection.remove();
             return;
@@ -304,7 +310,7 @@
                 item.classList.remove('active');
             });
             tocItem.classList.add('active');
-            
+
             // 切换章节显示
             document.querySelectorAll('.content-section').forEach(section => {
                 section.classList.remove('active');
