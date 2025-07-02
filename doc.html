@@ -263,45 +263,60 @@
                 const nodes = document.getElementById('content').childNodes;
                 
                 // 遍历所有节点，包裹章节
-                Array.from(nodes).forEach(node => {
-                    if (node.nodeName.match(/^H[1-3]$/)) {
-                        // 获取标题的层级
-                        const level = parseInt(node.nodeName[1]);
-                        
-                        // 创建新章节
-                        currentSection = document.createElement('div');
-                        currentSection.className = 'content-section';
-                        currentSection.id = 'section-' + node.textContent.toLowerCase().replace(/\s+/g, '-');
-                        node.parentNode.insertBefore(currentSection, node);
-                        currentSection.appendChild(node);
-                        
-                        // 添加相应的层级类
-                        const tocItem = document.createElement('div');
-                        tocItem.className = `toc-item level-${level}`;
-                        tocItem.textContent = node.textContent;
-                        tocItem.dataset.section = currentSection.id;
+               Array.from(nodes).forEach(node => {
+    if (node.nodeName.match(/^H[1-3]$/)) {
+        // 获取标题的层级
+        const level = parseInt(node.nodeName[1]);
 
-                        tocItem.addEventListener('click', () => {
-                            // 更新目录高亮
-                            document.querySelectorAll('.toc-item').forEach(item => {
-                                item.classList.remove('active');
-                            });
-                            tocItem.classList.add('active');
-                            
-                            // 切换章节显示
-                            document.querySelectorAll('.content-section').forEach(section => {
-                                section.classList.remove('active');
-                            });
-                            document.getElementById(tocItem.dataset.section).classList.add('active');
-                        });
+        // 创建新章节
+        const sectionId = 'section-' + node.textContent.toLowerCase().replace(/\s+/g, '-');
+        let newSection = document.createElement('div');
+        newSection.className = 'content-section';
+        newSection.id = sectionId;
 
-                        document.getElementById('toc').appendChild(tocItem);
-                    } else if (currentSection) {
-                        // 将内容添加到当前章节
-                        currentSection.appendChild(node.cloneNode(true));
-                        node.remove();
-                    }
-                });
+        // 如果是 H1 或 H2 等，确保将其嵌套到上一级章节
+        if (level === 1) {
+            // 根章节
+            currentSection = newSection;
+        } else {
+            let parentSection = currentSection;
+            for (let i = 2; i < level; i++) {
+                parentSection = parentSection.querySelector(`.content-section.level-${i}`);
+            }
+            parentSection.appendChild(newSection);
+            currentSection = newSection;
+        }
+
+        // 将标题放到新的章节中
+        currentSection.appendChild(node);
+
+        // 添加目录项
+        const tocItem = document.createElement('div');
+        tocItem.className = `toc-item level-${level}`;
+        tocItem.textContent = node.textContent;
+        tocItem.dataset.section = sectionId;
+
+        tocItem.addEventListener('click', () => {
+            // 更新目录高亮
+            document.querySelectorAll('.toc-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            tocItem.classList.add('active');
+
+            // 切换章节显示
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(tocItem.dataset.section).classList.add('active');
+        });
+
+        document.getElementById('toc').appendChild(tocItem);
+    } else if (currentSection) {
+        // 将内容添加到当前章节
+        currentSection.appendChild(node.cloneNode(true));
+        node.remove();
+    }
+});
 
                 // 默认显示第一个章节
                 const firstSection = document.querySelector('.content-section');
