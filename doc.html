@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>项目文档</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <style>
-        /* 基础重置 */
+     <style>
         * {
             margin: 0;
             padding: 0;
@@ -26,102 +25,124 @@
             background-color: var(--brand);
             color: var(--subclr);
             font-family: var(--ff1);
-            overflow-x: hidden;
             display: flex;
             min-height: 100vh;
         }
         
-        /* 左侧目录 */
+        /* 左侧目录 - 可折叠样式 */
         .sidebar {
             width: 280px;
-            padding: 30px 20px;
-            background-color: rgba(27, 1, 51, 0.9);
+            padding: 20px;
+            background-color: rgba(27, 1, 51, 0.95);
             height: 100vh;
             overflow-y: auto;
             position: sticky;
             top: 0;
-            border-right: 1px solid rgba(112, 100, 228, 0.3);
+            transition: all 0.3s;
         }
         
         .sidebar-header {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(112, 100, 228, 0.3);
         }
         
         .sidebar-header h2 {
-            background: var(--gradient);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--subclr); /* 纯白色标题 */
             font-size: 24px;
             font-weight: 600;
         }
         
-        .toc-item {
-            padding: 12px 15px;
-            margin: 5px 0;
-            cursor: pointer;
-            color: var(--subclr);
-            font-size: 16px;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+        .toc-list {
+            list-style: none;
         }
         
-        .toc-item:hover {
+        .toc-item {
+            margin: 5px 0;
+            position: relative;
+        }
+        
+        .toc-link {
+            display: block;
+            padding: 10px 15px;
+            color: var(--subclr);
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .toc-link:hover {
             background: rgba(235, 34, 203, 0.1);
         }
         
-        .toc-item.active {
+        .toc-link.active {
             background: rgba(235, 34, 203, 0.2);
-            border-left: 3px solid #EB22CB;
             font-weight: 600;
         }
         
-        .toc-item::before {
-            content: '';
+        /* 可折叠箭头图标 */
+        .toc-toggle {
             position: absolute;
-            top: 0;
             left: 0;
-            width: 3px;
-            height: 100%;
-            background: var(--gradient);
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            transition: transform 0.3s;
         }
         
-        .toc-item:hover::before {
-            opacity: 1;
+        .toc-toggle::after {
+            content: "▶";
+            color: var(--subclr);
+            font-size: 10px;
+            position: absolute;
+            transition: all 0.3s;
         }
         
-        /* 右侧内容 */
+        .toc-item.expanded > .toc-toggle::after {
+            transform: rotate(90deg);
+        }
+        
+        /* 层级缩进 */
+        .toc-sublist {
+            list-style: none;
+            padding-left: 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s;
+        }
+        
+        .toc-item.expanded > .toc-sublist {
+            max-height: 1000px; /* 足够大的值确保展开 */
+        }
+        
+        /* 不同层级样式 */
+        .toc-item.level-1 > .toc-link {
+            padding-left: 30px;
+            font-weight: 600;
+        }
+        
+        .toc-item.level-2 > .toc-link {
+            padding-left: 50px;
+            font-size: 15px;
+        }
+        
+        .toc-item.level-3 > .toc-link {
+            padding-left: 70px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        /* 右侧内容区域 */
         .content {
             flex: 1;
             padding: 40px;
             max-width: 900px;
-            background-color: rgba(27, 1, 51, 0.7);
         }
         
-        .content-section {
-            display: none;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        .content-section.active {
-            display: block;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* 内容样式 */
+        /* 纯白色标题 */
         h1, h2, h3, h4 {
-            background: var(--gradient);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--subclr); /* 纯白色 */
             margin: 25px 0 15px;
             font-weight: 600;
         }
@@ -141,75 +162,25 @@
             font-size: 22px;
         }
         
+        /* 其他内容样式保持不变 */
         p {
             line-height: 1.8;
             margin-bottom: 20px;
             color: rgba(255, 255, 255, 0.8);
         }
         
-        a {
-            color: #30CFD0;
-            text-decoration: none;
-            transition: all 0.3s ease;
+        .content-section {
+            display: none;
         }
         
-        a:hover {
-            color: #EB22CB;
-            text-decoration: underline;
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
         }
         
-        code {
-            background: rgba(0, 0, 0, 0.3);
-            color: #f8f8f2;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-family: monospace;
-            border: 1px solid rgba(112, 100, 228, 0.5);
-        }
-        
-        pre {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 15px;
-            border-radius: 6px;
-            overflow-x: auto;
-            margin: 20px 0;
-            border: 1px solid rgba(112, 100, 228, 0.5);
-        }
-        
-        pre code {
-            background: transparent;
-            padding: 0;
-            border: none;
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background: rgba(0, 0, 0, 0.2);
-        }
-        
-        th, td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid rgba(112, 100, 228, 0.3);
-        }
-        
-        th {
-            background: rgba(235, 34, 203, 0.1);
-            color: var(--subclr);
-        }
-        
-        tr:hover {
-            background: rgba(48, 207, 208, 0.1);
-        }
-        
-        blockquote {
-            border-left: 4px solid #EB22CB;
-            padding: 10px 20px;
-            margin: 20px 0;
-            background: rgba(235, 34, 203, 0.05);
-            color: rgba(255, 255, 255, 0.7);
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         /* 响应式设计 */
@@ -221,42 +192,14 @@
             .sidebar {
                 width: 100%;
                 height: auto;
+                max-height: 200px;
+                overflow-y: auto;
                 position: relative;
-                border-right: none;
-                border-bottom: 1px solid rgba(112, 100, 228, 0.3);
             }
             
             .content {
                 padding: 25px;
             }
-        }
-        
-        /* 加载动画 */
-        .loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--brand);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-        
-        .loader-spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid rgba(235, 34, 203, 0.2);
-            border-top: 5px solid #EB22CB;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -269,7 +212,7 @@
     <!-- 左侧目录 -->
     <div class="sidebar">
         <div class="sidebar-header">
-            <h2>项目文档</h2>
+            <h2>Document</h2>
         </div>
         <div id="toc"></div>
     </div>
@@ -350,30 +293,8 @@
                 console.error(error);
                 
                 // 使用备用内容
-                const fallbackMd = `# 示例文档
-
-## 欢迎使用
-这是自动生成的示例内容
-
-## 快速开始
-\`\`\`bash
-npm install
-npm start
-\`\`\`
-
-## 功能特点
-- 基于现代Web技术
-- 响应式设计
-- 美观的UI界面
-
-## 配置选项
-| 参数 | 默认值 | 说明 |
-|------|--------|------|
-| port | 3000   | 服务端口 |
-| host | localhost | 服务地址 |
-
-> 提示：这是一个示例文档，请替换为您的实际内容
-`;
+                const fallbackMd = `# 
+                ## 欢迎使用PiscTrace`;
                 document.getElementById('content').innerHTML = marked.parse(fallbackMd);
                 // ...同样处理章节和目录...
             });
