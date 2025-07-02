@@ -355,30 +355,6 @@ if (firstH1) {
     }
 }
 
-                // 生成目录导航
-                document.querySelectorAll('.content-section > h1, .content-section > h2').forEach((heading, index) => {
-                    const tocItem = document.createElement('div');
-                    tocItem.className = `toc-item level-${heading.nodeName[1]}`;
-                    tocItem.textContent = heading.textContent;
-                    tocItem.dataset.section = heading.parentNode.id;
-
-                    tocItem.addEventListener('click', () => {
-                        // 更新目录高亮
-                        document.querySelectorAll('.toc-item').forEach(item => {
-                            item.classList.remove('active');
-                        });
-                        tocItem.classList.add('active');
-                        
-                        // 切换章节显示
-                        document.querySelectorAll('.content-section').forEach(section => {
-                            section.classList.remove('active');
-                        });
-                        document.getElementById(tocItem.dataset.section).classList.add('active');
-                    });
-
-                    document.getElementById('toc').appendChild(tocItem);
-                });
-
                 // 默认显示第一个章节
                 const firstSection = document.querySelector('.content-section');
                 if (firstSection) {
