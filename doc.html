@@ -264,45 +264,96 @@
                 
                 // 遍历所有节点，包裹章节
                 Array.from(nodes).forEach(node => {
-                    if (node.nodeName.match(/^H[1-3]$/)) {
-                        // 获取标题的层级
-                        const level = parseInt(node.nodeName[1]);
-                        
-                        // 创建新章节
-                        currentSection = document.createElement('div');
-                        currentSection.className = 'content-section';
-                        currentSection.id = 'section-' + node.textContent.toLowerCase().replace(/\s+/g, '-');
-                        node.parentNode.insertBefore(currentSection, node);
-                        currentSection.appendChild(node);
-                        
-                        // 添加相应的层级类
-                        const tocItem = document.createElement('div');
-                        tocItem.className = `toc-item level-${level}`;
-                        tocItem.textContent = node.textContent;
-                        tocItem.dataset.section = currentSection.id;
+    if (node.nodeName.match(/^H[1-3]$/)) {
+        // 获取标题的层级
+        const level = parseInt(node.nodeName[1]);
+        
+        // 创建新章节
+        currentSection = document.createElement('div');
+        currentSection.className = 'content-section';
+        currentSection.id = 'section-' + node.textContent.toLowerCase().replace(/\s+/g, '-');
+        node.parentNode.insertBefore(currentSection, node);
+        currentSection.appendChild(node);
+        
+        // 添加相应的层级类
+        const tocItem = document.createElement('div');
+        tocItem.className = `toc-item level-${level}`;
+        tocItem.textContent = node.textContent;
+        tocItem.dataset.section = currentSection.id;
+        tocItem.dataset.level = level;
 
-                        tocItem.addEventListener('click', () => {
-                            // 更新目录高亮
-                            document.querySelectorAll('.toc-item').forEach(item => {
-                                item.classList.remove('active');
-                            });
-                            tocItem.classList.add('active');
-                            
-                            // 切换章节显示
-                            document.querySelectorAll('.content-section').forEach(section => {
-                                section.classList.remove('active');
-                            });
-                            document.getElementById(tocItem.dataset.section).classList.add('active');
-                        });
+        tocItem.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // 更新目录高亮
+            document.querySelectorAll('.toc-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            tocItem.classList.add('active');
+            
+            // 获取当前点击的章节
+            const targetSection = document.getElementById(tocItem.dataset.section);
+            
+            // 隐藏所有章节
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // 显示当前章节及其所有子内容
+            let nextNode = targetSection.nextElementSibling;
+            targetSection.classList.add('active');
+            
+            // 如果是h1标题，显示其下所有内容直到下一个h1
+            if (level === 1) {
+                while (nextNode && !(nextNode.nodeName.match(/^H1$/) && nextNode.classList.contains('content-section'))) {
+                    nextNode.classList.add('active');
+                    nextNode = nextNode.nextElementSibling;
+                }
+            } 
+            // 如果是h2标题，显示其下所有内容直到下一个h2或h1
+            else if (level === 2) {
+                while (nextNode && !(nextNode.nodeName.match(/^H[1-2]$/) && nextNode.classList.contains('content-section'))) {
+                    nextNode.classList.add('active');
+                    nextNode = nextNode.nextElementSibling;
+                }
+            }
+            // h3标题只显示自身内容
+            else {
+                targetSection.classList.add('active');
+            }
+            
+            // 滚动到顶部
+            window.scrollTo(0, 0);
+        });
+        
+        // 添加到目录
+        document.getElementById('toc').appendChild(tocItem);
+    } else if (currentSection) {
+        // 将内容添加到当前章节
+        currentSection.appendChild(node.cloneNode(true));
+        node.remove();
+    }
+});
 
-                        document.getElementById('toc').appendChild(tocItem);
-                    } else if (currentSection) {
-                        // 将内容添加到当前章节
-                        currentSection.appendChild(node.cloneNode(true));
-                        node.remove();
-                    }
-                });
-
+// 默认展开第一个h1及其所有子内容
+const firstH1 = document.querySelector('.content-section > h1');
+if (firstH1) {
+    const firstSection = firstH1.parentElement;
+    firstSection.classList.add('active');
+    
+    // 显示第一个h1下的所有内容
+    let nextNode = firstSection.nextElementSibling;
+    while (nextNode && !(nextNode.nodeName.match(/^H1$/) && nextNode.classList.contains('content-section'))) {
+        nextNode.classList.add('active');
+        nextNode = nextNode.nextElementSibling;
+    }
+    
+    // 高亮第一个目录项
+    const firstTocItem = document.querySelector('.toc-item.level-1');
+    if (firstTocItem) {
+        firstTocItem.classList.add('active');
+    }
+}
                 // 默认显示第一个章节
                 const firstSection = document.querySelector('.content-section');
                 if (firstSection) {
