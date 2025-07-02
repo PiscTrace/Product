@@ -1,11 +1,13 @@
-<!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>项目文档</title>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <style>
+ <head></head>
+ <body>
+  &lt; !DOCTYPE html &gt;   
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <title> 项目文档 &lt; /title&gt;
+    </title>
+  <script src="https:/ / cdn.jsdelivr.net / npm / marked / marked.min.js "></script> 
+  <style>
         /* 基础重置 */
         * {
             margin: 0;
@@ -222,26 +224,21 @@
                 padding: 25px;
             }
         }
-    </style>
-</head>
-<body>
-    <!-- 加载动画 -->
-    <div class="loader" id="loader">
-        <div class="loader-spinner"></div>
-    </div>
-
-    <!-- 左侧目录 -->
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <h1>PiscTrace</h1>
-        </div>
-        <div id="toc"></div>
-    </div>
-
-    <!-- 右侧内容 -->
-    <div class="content" id="content"></div>
-
-    <script>
+    </style>   
+  <!-- 加载动画 --> 
+  <div class="loader " id="loader "> 
+   <div class="loader - spinner "></div> 
+  </div> 
+  <!-- 左侧目录 --> 
+  <div class="sidebar "> 
+   <div class="sidebar - header "> 
+    <h1>PiscTrace</h1> 
+   </div> 
+   <div id="toc "></div> 
+  </div> 
+  <!-- 右侧内容 --> 
+  <div class="content " id="content "></div> 
+  <script>
         // 显示加载动画
         const loader = document.getElementById('loader');
         
@@ -362,7 +359,8 @@ if (firstH1) {
                 }
             })
             .catch(error => {
-                loader.innerHTML = `<p style="color: #EB22CB;">错误: ${error.message}</p>`;
+                loader.innerHTML = `<p style="color: #EB22CB;
+">错误: ${error.message}</p>`;
                 console.error(error);
                 
                 // 使用备用内容
@@ -371,6 +369,6 @@ if (firstH1) {
                 document.getElementById('content').innerHTML = marked.parse(fallbackMd);
                 // ...同样处理章节和目录...
             });
-    </script>
-</body>
+    </script>   &quot;
+ </body>
 </html>
