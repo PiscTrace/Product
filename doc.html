@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>我的文档</title>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    body { 
+      display: flex; 
+      margin: 0; 
+      font-family: Arial;
+    }
+    /* 左侧目录 */
+    #toc {
+      width: 200px;
+      padding: 20px;
+      background: #f8f9fa;
+      height: 100vh;
+      overflow-y: auto;
+      position: sticky;
+      top: 0;
+    }
+    /* 右侧内容 */
+    #content {
+      flex: 1;
+      padding: 30px;
+      max-width: 800px;
+    }
+    /* 目录项样式 */
+    .toc-item {
+      padding: 8px 0;
+      cursor: pointer;
+      color: #555;
+    }
+    .toc-item:hover {
+      color: #0066cc;
+    }
+    .toc-item.active {
+      font-weight: bold;
+      color: #0066cc;
+      border-left: 3px solid #0066cc;
+      padding-left: 10px;
+    }
+    /* 内容章节样式 */
+    .content-section {
+      display: none; /* 默认隐藏所有章节 */
+    }
+    .content-section.active {
+      display: block; /* 只显示当前章节 */
+      animation: fadeIn 0.3s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    /* 加载状态 */
+    #loading {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+<body>
+  <div id="toc"><h3>目录</h3></div>
+  <div id="content"></div>
+  <div id="loading">加载中...</div>
+
+  <script>
+    // 显示加载状态
+    const loadingElement = document.getElementById('loading');
+    
+    // 从 doc.md 加载内容
+    fetch('doc.md')
+      .then(response => {
+        if (!response.ok) throw new Error('文件加载失败');
+        return response.text();
+      })
+      .then(md => {
+        // 隐藏加载状态
+        loadingElement.style.display = 'none';
+        
+        // 渲染Markdown
+        document.getElementById('content').innerHTML = marked.parse(md);
+        
+        // 自动包裹章节
+        let currentSection = null;
+        const nodes = document.getElementById('content').childNodes;
+        
+        // 遍历所有节点，包裹章节
+        Array.from(nodes).forEach(node => {
+          if (node.nodeName.match(/^H[1-2]$/)) {
+            // 创建新章节
+            currentSection = document.createElement('div');
+            currentSection.className = 'content-section';
+            currentSection.id = 'section-' + node.textContent.toLowerCase().replace(/\s+/g, '-');
+            node.parentNode.insertBefore(currentSection, node);
+            currentSection.appendChild(node);
+          } else if (currentSection) {
+            // 将内容添加到当前章节
+            currentSection.appendChild(node.cloneNode(true));
+            node.remove();
+          }
+        });
+
+        // 生成目录导航
+        document.querySelectorAll('.content-section > h1, .content-section > h2').forEach((heading, index) => {
+          const tocItem = document.createElement('div');
+          tocItem.className = 'toc-item';
+          tocItem.textContent = heading.textContent;
+          tocItem.dataset.section = heading.parentNode.id;
+          
+          tocItem.addEventListener('click', () => {
+            // 更新目录高亮
+            document.querySelectorAll('.toc-item').forEach(item => {
+              item.classList.remove('active');
+            });
+            tocItem.classList.add('active');
+            
+            // 切换章节显示
+            document.querySelectorAll('.content-section').forEach(section => {
+              section.classList.remove('active');
+            });
+            document.getElementById(tocItem.dataset.section).classList.add('active');
+          });
+          
+          document.getElementById('toc').appendChild(tocItem);
+        });
+
+        // 默认显示第一个章节
+        const firstSection = document.querySelector('.content-section');
+        if (firstSection) {
+          firstSection.classList.add('active');
+          document.querySelector('.toc-item').classList.add('active');
+        }
+      })
+      .catch(error => {
+        loadingElement.textContent = '错误: ' + error.message;
+        console.error(error);
+      });
+  </script>
+</body>
+</html>
