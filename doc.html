@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>项目文档</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-     <style>
+    <style>
         /* 基础重置 */
         * {
             margin: 0;
@@ -13,7 +13,7 @@
             outline: 0;
             box-sizing: border-box;
         }
-        
+
         :root {
             --brand: #1b0133;
             --subclr: #fff; /* 纯白色 */
@@ -21,7 +21,7 @@
             --gradient: linear-gradient(to right, #EB22CB 0%, #30CFD0 100%);
             --ff1: 'Poppins', sans-serif;
         }
-        
+
         body {
             background-color: var(--brand);
             color: var(--subclr);
@@ -30,7 +30,7 @@
             display: flex;
             min-height: 100vh;
         }
-        
+
         /* 左侧目录 */
         .sidebar {
             width: 280px;
@@ -42,19 +42,19 @@
             top: 0;
             border-right: 1px solid rgba(112, 100, 228, 0.3);
         }
-        
+
         .sidebar-header {
             margin-bottom: 30px;
             padding-bottom: 10px;
             border-bottom: 1px solid rgba(112, 100, 228, 0.3);
         }
-        
+
         .sidebar-header h2 {
             color: var(--subclr); /* 纯白色 */
             font-size: 24px;
             font-weight: 600;
         }
-        
+
         .toc-item {
             padding: 12px 15px;
             margin: 5px 0;
@@ -65,17 +65,29 @@
             transition: all 0.3s ease;
             position: relative;
         }
-        
+
         .toc-item:hover {
             background: rgba(235, 34, 203, 0.1);
         }
-        
+
         .toc-item.active {
             background: rgba(235, 34, 203, 0.2);
             border-left: 3px solid #EB22CB;
             font-weight: 600;
         }
-        
+
+        .toc-item.level-1 {
+            padding-left: 0;
+        }
+
+        .toc-item.level-2 {
+            padding-left: 20px;
+        }
+
+        .toc-item.level-3 {
+            padding-left: 40px;
+        }
+
         /* 右侧内容 */
         .content {
             flex: 1;
@@ -83,61 +95,61 @@
             max-width: 900px;
             background-color: rgba(27, 1, 51, 0.7);
         }
-        
+
         .content-section {
             display: none;
             animation: fadeIn 0.5s ease;
         }
-        
+
         .content-section.active {
             display: block;
         }
-        
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(10px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        
+
         /* 标题样式 - 统一纯白色 */
         h1, h2, h3, h4, h5, h6 {
             color: var(--subclr); /* 纯白色 */
             margin: 25px 0 15px;
             font-weight: 600;
         }
-        
+
         h1 {
             font-size: 36px;
             border-bottom: 2px dashed rgba(48, 207, 208, 0.3);
             padding-bottom: 10px;
         }
-        
+
         h2 {
             font-size: 28px;
             margin-top: 40px;
         }
-        
+
         h3 {
             font-size: 22px;
         }
-        
+
         /* 内容样式 */
         p {
             line-height: 1.8;
             margin-bottom: 20px;
             color: rgba(255, 255, 255, 0.8);
         }
-        
+
         a {
             color: #30CFD0;
             text-decoration: none;
             transition: all 0.3s ease;
         }
-        
+
         a:hover {
             color: #EB22CB;
             text-decoration: underline;
         }
-        
+
         code {
             background: rgba(0, 0, 0, 0.3);
             color: #f8f8f2;
@@ -146,7 +158,7 @@
             font-family: monospace;
             border: 1px solid rgba(112, 100, 228, 0.5);
         }
-        
+
         pre {
             background: rgba(0, 0, 0, 0.3);
             padding: 15px;
@@ -155,35 +167,35 @@
             margin: 20px 0;
             border: 1px solid rgba(112, 100, 228, 0.5);
         }
-        
+
         pre code {
             background: transparent;
             padding: 0;
             border: none;
         }
-        
+
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 20px 0;
             background: rgba(0, 0, 0, 0.2);
         }
-        
+
         th, td {
             padding: 12px 15px;
             text-align: left;
             border-bottom: 1px solid rgba(112, 100, 228, 0.3);
         }
-        
+
         th {
             background: rgba(235, 34, 203, 0.1);
             color: var(--subclr);
         }
-        
+
         tr:hover {
             background: rgba(48, 207, 208, 0.1);
         }
-        
+
         blockquote {
             border-left: 4px solid #EB22CB;
             padding: 10px 20px;
@@ -191,13 +203,13 @@
             background: rgba(235, 34, 203, 0.05);
             color: rgba(255, 255, 255, 0.7);
         }
-        
+
         /* 响应式设计 */
         @media (max-width: 768px) {
             body {
                 flex-direction: column;
             }
-            
+
             .sidebar {
                 width: 100%;
                 height: auto;
@@ -205,38 +217,10 @@
                 border-right: none;
                 border-bottom: 1px solid rgba(112, 100, 228, 0.3);
             }
-            
+
             .content {
                 padding: 25px;
             }
-        }
-        
-        /* 加载动画 */
-        .loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--brand);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 9999;
-        }
-        
-        .loader-spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid rgba(235, 34, 203, 0.2);
-            border-top: 5px solid #EB22CB;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -280,42 +264,43 @@
                 
                 // 遍历所有节点，包裹章节
                 Array.from(nodes).forEach(node => {
-                    if (node.nodeName.match(/^H[1-2]$/)) {
+                    if (node.nodeName.match(/^H[1-3]$/)) {
+                        // 获取标题的层级
+                        const level = parseInt(node.nodeName[1]);
+                        
                         // 创建新章节
                         currentSection = document.createElement('div');
                         currentSection.className = 'content-section';
                         currentSection.id = 'section-' + node.textContent.toLowerCase().replace(/\s+/g, '-');
                         node.parentNode.insertBefore(currentSection, node);
                         currentSection.appendChild(node);
+                        
+                        // 添加相应的层级类
+                        const tocItem = document.createElement('div');
+                        tocItem.className = `toc-item level-${level}`;
+                        tocItem.textContent = node.textContent;
+                        tocItem.dataset.section = currentSection.id;
+
+                        tocItem.addEventListener('click', () => {
+                            // 更新目录高亮
+                            document.querySelectorAll('.toc-item').forEach(item => {
+                                item.classList.remove('active');
+                            });
+                            tocItem.classList.add('active');
+                            
+                            // 切换章节显示
+                            document.querySelectorAll('.content-section').forEach(section => {
+                                section.classList.remove('active');
+                            });
+                            document.getElementById(tocItem.dataset.section).classList.add('active');
+                        });
+
+                        document.getElementById('toc').appendChild(tocItem);
                     } else if (currentSection) {
                         // 将内容添加到当前章节
                         currentSection.appendChild(node.cloneNode(true));
                         node.remove();
                     }
-                });
-
-                // 生成目录导航
-                document.querySelectorAll('.content-section > h1, .content-section > h2').forEach((heading, index) => {
-                    const tocItem = document.createElement('div');
-                    tocItem.className = 'toc-item';
-                    tocItem.textContent = heading.textContent;
-                    tocItem.dataset.section = heading.parentNode.id;
-                    
-                    tocItem.addEventListener('click', () => {
-                        // 更新目录高亮
-                        document.querySelectorAll('.toc-item').forEach(item => {
-                            item.classList.remove('active');
-                        });
-                        tocItem.classList.add('active');
-                        
-                        // 切换章节显示
-                        document.querySelectorAll('.content-section').forEach(section => {
-                            section.classList.remove('active');
-                        });
-                        document.getElementById(tocItem.dataset.section).classList.add('active');
-                    });
-                    
-                    document.getElementById('toc').appendChild(tocItem);
                 });
 
                 // 默认显示第一个章节
