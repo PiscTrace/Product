@@ -263,7 +263,59 @@
                 const nodes = document.getElementById('content').childNodes;
                 
                 // 遍历所有节点，包裹章节
-                Array.from(nodes).forEach(node => {
+               Array.from(nodes).forEach(node => {
+    if (node.nodeName.match(/^H[1-3]$/)) {
+        // 获取标题的层级
+        const level = parseInt(node.nodeName[1]);
+
+        // 创建新章节
+        currentSection = document.createElement('div');
+        currentSection.className = 'content-section';
+        currentSection.id = 'section-' + node.textContent.toLowerCase().replace(/\s+/g, '-');
+        node.parentNode.insertBefore(currentSection, node);
+        currentSection.appendChild(node);
+        
+        // 检查该章节是否有正文或子章节
+        let hasContent = false;
+        let nextSibling = node.nextElementSibling;
+
+        // 遍历直到下一个标题为止，检查正文或子章节
+        while (nextSibling && !nextSibling.nodeName.match(/^H[1-3]$/)) {
+            hasContent = true;
+            currentSection.appendChild(nextSibling);
+            nextSibling = nextSibling.nextElementSibling;
+        }
+
+        // 如果该章节没有正文或子章节，则删除该章节
+        if (!hasContent) {
+            currentSection.remove();
+            return;
+        }
+
+        // 添加相应的层级类
+        const tocItem = document.createElement('div');
+        tocItem.className = `toc-item level-${level}`;
+        tocItem.textContent = node.textContent;
+        tocItem.dataset.section = currentSection.id;
+
+        tocItem.addEventListener('click', () => {
+            // 更新目录高亮
+            document.querySelectorAll('.toc-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            tocItem.classList.add('active');
+            
+            // 切换章节显示
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(tocItem.dataset.section).classList.add('active');
+        });
+
+        document.getElementById('toc').appendChild(tocItem);
+    }
+});
+
                     if (node.nodeName.match(/^H[1-3]$/)) {
                         // 获取标题的层级
                         const level = parseInt(node.nodeName[1]);
