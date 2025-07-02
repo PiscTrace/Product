@@ -354,13 +354,6 @@ if (firstH1) {
         firstTocItem.classList.add('active');
     }
 }
-
-                // 默认显示第一个章节
-                const firstSection = document.querySelector('.content-section');
-                if (firstSection) {
-                    firstSection.classList.add('active');
-                    document.querySelector('.toc-item').classList.add('active');
-                }
             })
             .catch(error => {
                 loader.innerHTML = `<p style="color: #EB22CB;">错误: ${error.message}</p>`;
