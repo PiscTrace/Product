@@ -67,13 +67,15 @@
 ### 渲染与保存
 - 输出格式：图像、视频
 
-# 使用须知
-- 下载链接:
- - PiscTrace : [下载地址](https://gitcode.com/weixin_43607107/PiscTrace/releases/download/PiscTrace/PiscTrace-影迹.zip)。 
- - PiscCode : [下载地址](https://gitcode.com/weixin_43607107/PiscTrace/releases/download/PiscCode/PiscCode-影迹.zip)。
-- 解压密码 : *********
-
 # 常见问题
 - **如何导入YOLO模型** : 将YOLO模型(.pt)放置在“解压地址/Support Files/data/model“目录下
 - **为什么没有MiDaS选项** : MiDaS是GitHub在线资源，使用时需要保证您的电脑可以访问Github
 - **如何导入文件** : 将文件放置在“项目地址/input“内，文件栏支持临时拖入文件/文件夹
+- **自定义运行时提示库文件缺失** : 将相关库文件放置在“解压地址/_internal"内
+- **如何导出视频** : 右键点击选择保存当前帧或导出视频
+- **为什么无法调整参数或没变化** : 单击参数标题使其生效或取消
+
+# 使用须知
+- 下载链接:
+ - PiscTrace : [下载地址](https://gitcode.com/weixin_43607107/PiscTrace/releases/download/PiscTrace/PiscTrace-影迹.zip)
+ - PiscCode : [下载地址](https://gitcode.com/weixin_43607107/PiscTrace/releases/download/PiscCode/PiscCode-影迹.zip)
