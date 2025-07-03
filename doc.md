@@ -176,5 +176,5 @@
 > 3. 因个人设备环境导致的运行问题，本店提供技术指导但不承担退货责任。”（《电子商务法》第四十九条）
 
 ## 下载链接:
- - PiscTrace : [下载地址](https://gitcode.com/weixin_43607107/PiscTrace/releases/download/PiscTrace/PiscTrace-影迹.zip)
- - PiscCode : [下载地址](https://gitcode.com/weixin_43607107/PiscTrace/releases/download/PiscCode/PiscCode-影迹.zip)
+ - **PiscTrace** : [下载地址](https://gitcode.com/weixin_43607107/PiscTrace/releases/download/PiscTrace/PiscTrace-影迹.zip)
+ - **PiscCode** : [下载地址](https://gitcode.com/weixin_43607107/PiscTrace/releases/download/PiscCode/PiscCode-影迹.zip)
