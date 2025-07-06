@@ -232,14 +232,6 @@ OpenCV 提供强大的图像预处理与后处理功能，YOLO（You Only Look O
 2. 密钥激活后谎称"未使用"  
 3. 因设备问题诬称软件故障  
 
-
-### 软件获取  
-
-| 软件名称   | 下载链接                                                                                               |
-|------------|-------------------------------------------------------------------------------------------------------|
-| PiscTrace  | [立即下载](https://gitcode.com/weixin_43607107/PiscTrace/releases/download/PiscTrace/PiscTrace-影迹.zip) |
-| PiscCode   | [立即下载](https://gitcode.com/weixin_43607107/PiscTrace/releases/download/PiscCode/PiscCode-影迹.zip)   |
-
 > **重要提示**：下载即视为完全接受本政策所有条款  
 
 **声明效力**：本政策已通过支付确认弹窗等显著方式提示，完成支付即构成合同生效要件。  
