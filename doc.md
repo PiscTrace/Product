@@ -90,6 +90,8 @@ OpenCV 提供强大的图像预处理与后处理功能，YOLO（You Only Look O
 - 表格中价格为**首次购买价**
 - **每次升级需支付 ¥8 手续费**
 - **升级价格计算公式：** `目标版本售价 - 当前版本售价 + ¥8`
+- **转账备注邮箱需要和申请时接受密钥邮箱一致**
+- ![欢迎光临](https://github.com/PiscTrace/Product/blob/main/static/image/Group%202.png?raw=true)
 
 > 例如：Plus 升级到 Ultra：
 > - `¥128 - ¥38 + ¥8 = ¥98`
@@ -122,6 +124,9 @@ OpenCV 提供强大的图像预处理与后处理功能，YOLO（You Only Look O
 - 表格中价格为**首次购买价**
 - **每次升级需支付 ¥8 手续费**
 - **升级价格计算公式：** `目标版本售价 - 当前版本售价 + ¥8`
+- **转账备注邮箱需要和申请时接受密钥邮箱一致**
+- ![欢迎光临](https://github.com/PiscTrace/Product/blob/main/static/image/Group%202.png?raw=true)
+
 
 > 例如：Plus 升级到 Pro：
 > - `¥98 - ¥58 + ¥8 = ¥48`
