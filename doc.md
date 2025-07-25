@@ -94,7 +94,7 @@ OpenCV 提供强大的图像预处理与后处理功能，YOLO（You Only Look O
 > 例如：Plus 升级到 Ultra：
 > - `¥128 - ¥38 + ¥8 = ¥98`
 > **转账备注邮箱需要和申请时接受密钥邮箱一致**
-> - ![欢迎光临](https://github.com/PiscTrace/Product/blob/main/static/image/Group%202.png?raw=true)
+> - ![欢迎光临](https://gitcode.com/weixin_43607107/PiscTrace/blob/main/static/image/Group%202.png)
 
 
 
@@ -129,7 +129,7 @@ OpenCV 提供强大的图像预处理与后处理功能，YOLO（You Only Look O
 > 例如：Plus 升级到 Ultra：
 > - `¥128 - ¥38 + ¥8 = ¥98`
 > **转账备注邮箱需要和申请时接受密钥邮箱一致**
-> - ![欢迎光临](https://github.com/PiscTrace/Product/blob/main/static/image/Group%202.png?raw=true)
+> - ![欢迎光临](https://gitcode.com/weixin_43607107/PiscTrace/blob/main/static/image/Group%202.png)
 
 # ❓ 常见问题（FAQ）
 
