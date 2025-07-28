@@ -320,7 +320,7 @@
         const loader = document.getElementById('loader');
 
         // 从 doc.md 加载内容
-        fetch('doc.md')
+        fetch('README.md')
             .then(response => {
                 if (!response.ok) throw new Error('文件加载失败');
                 return response.text();
