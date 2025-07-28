@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>使用文档</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
@@ -29,7 +29,6 @@
             overflow-x: hidden;
             display: flex;
             min-height: 100vh;
-            position: relative;
         }
 
         /* 左侧目录 */
@@ -45,8 +44,8 @@
             top: 0;
             border-right: 1px solid rgba(112, 100, 228, 0.3);
             box-sizing: border-box;
-            z-index: 100;
-        }
+}
+
 
         .sidebar-header {
             margin-bottom: 30px;
@@ -94,13 +93,13 @@
         }
 
         /* 右侧内容 */
-        .content {
+       .content {
             flex-grow: 1;
             padding: 40px;
             min-width: 0;
             background-color: rgba(24, 24, 24, 0.7);
-            z-index: 100;
         }
+
 
         .content-section {
             display: none;
@@ -112,23 +111,12 @@
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* 标题样式 - 统一纯白色 */
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
+        h1, h2, h3, h4, h5, h6 {
             color: var(--subclr); /* 纯白色 */
             margin: 25px 0 15px;
             font-weight: 600;
@@ -198,8 +186,7 @@
             background: rgba(0, 0, 0, 0.2);
         }
 
-        th,
-        td {
+        th, td {
             padding: 12px 15px;
             text-align: left;
             border-bottom: 1px solid rgba(112, 100, 228, 0.3);
@@ -240,44 +227,8 @@
                 padding: 25px;
             }
         }
-
-        /* 加载动画 */
-        .loader {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 999;
-        }
-
-        .loader-spinner {
-            border: 6px solid rgba(255, 255, 255, 0.3);
-            border-top: 6px solid #EB22CB;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        canvas {
-  outline: none !important;
-  border: none !important;
-  box-shadow: none !important;
-}
-
     </style>
 </head>
-
 <body>
     <!-- 加载动画 -->
     <div class="loader" id="loader">
@@ -287,9 +238,7 @@
     <!-- 左侧目录 -->
     <div class="sidebar">
         <div class="sidebar-header">
-            <h1>
-                <a href="javascript:history.back()" style="text-decoration: none; color: inherit;">〈 使用文档</a>
-            </h1>
+            <h1><a href="javascript:history.back()" style="text-decoration: none; color: inherit;">&lt 使用文档</a></h1>
         </div>
         <div id="toc"></div>
     </div>
@@ -297,30 +246,12 @@
     <!-- 右侧内容 -->
     <div class="content" id="content"></div>
 
-    <!-- 右下角固定狗模型 -->
-    <canvas
-        id="live2d-dog"
-        width="160"
-        height="360"
-        style="
-          position: fixed;
-          bottom: 0;
-          right: 0;
-          width: 160px;
-          height: 360px;
-          pointer-events: none;
-          z-index: 50;
-        "
-    ></canvas>
-
-    <script src="https://cdn.jsdelivr.net/npm/pixi.js@6.5.2/dist/pixi.min.js"></script>
-    <script src="https://unpkg.com/live2d-widget@3.0.4/lib/L2Dwidget.min.js"></script>
     <script>
         // 显示加载动画
         const loader = document.getElementById('loader');
-
+        
         // 从 doc.md 加载内容
-        fetch('README.md')
+        fetch('doc.md')
             .then(response => {
                 if (!response.ok) throw new Error('文件加载失败');
                 return response.text();
@@ -328,137 +259,110 @@
             .then(md => {
                 // 隐藏加载动画
                 loader.style.display = 'none';
-
+                
                 // 渲染Markdown
                 document.getElementById('content').innerHTML = marked.parse(md);
-
+                
                 // 自动包裹章节
                 let currentSection = null;
                 const nodes = document.getElementById('content').childNodes;
-
+                
                 // 遍历所有节点，包裹章节
                 Array.from(nodes).forEach(node => {
-                    if (node.nodeName.match(/^H[1-6]$/)) {
-                        // 获取标题的层级
-                        const level = parseInt(node.nodeName[1]);
+    if (node.nodeName.match(/^H[1-6]$/)) { // 支持h1-h6所有标题
+        // 获取标题的层级
+        const level = parseInt(node.nodeName[1]);
+        
+        // 创建新章节
+        currentSection = document.createElement('div');
+        currentSection.className = 'content-section';
+        currentSection.id = 'section-' + node.textContent.toLowerCase().replace(/\s+/g, '-');
+        node.parentNode.insertBefore(currentSection, node);
+        currentSection.appendChild(node);
+        
+        // 添加目录项
+        const tocItem = document.createElement('div');
+        tocItem.className = `toc-item level-${level}`;
+        tocItem.textContent = node.textContent;
+        tocItem.dataset.section = currentSection.id;
 
-                        // 创建新章节
-                        currentSection = document.createElement('div');
-                        currentSection.className = 'content-section';
-                        currentSection.id =
-                            'section-' + node.textContent.toLowerCase().replace(/\s+/g, '-');
-                        node.parentNode.insertBefore(currentSection, node);
-                        currentSection.appendChild(node);
-
-                        // 添加目录项
-                        const tocItem = document.createElement('div');
-                        tocItem.className = `toc-item level-${level}`;
-                        tocItem.textContent = node.textContent;
-                        tocItem.dataset.section = currentSection.id;
-
-                        tocItem.addEventListener('click', e => {
-                            e.preventDefault();
-
-                            // 更新目录高亮
-                            document.querySelectorAll('.toc-item').forEach(item => {
-                                item.classList.remove('active');
-                            });
-                            tocItem.classList.add('active');
-
-                            // 获取当前点击的章节
-                            const targetSection = document.getElementById(tocItem.dataset.section);
-
-                            // 隐藏所有章节
-                            document.querySelectorAll('.content-section').forEach(section => {
-                                section.classList.remove('active');
-                            });
-
-                            // 显示当前章节及其所有子内容
-                            targetSection.classList.add('active');
-                            let nextNode = targetSection.nextElementSibling;
-
-                            // 遍历后续节点，直到遇到同级或更高级标题
-                            while (nextNode) {
-                                if (nextNode.classList.contains('content-section')) {
-                                    const nextTitle = nextNode.querySelector(
-                                        'h1, h2, h3, h4, h5, h6'
-                                    );
-                                    if (nextTitle) {
-                                        const nextLevel = parseInt(nextTitle.nodeName[1]);
-                                        if (nextLevel <= level) break; // 遇到同级或更高级标题时停止
-                                    }
-                                }
-                                nextNode.classList.add('active');
-                                nextNode = nextNode.nextElementSibling;
-                            }
-
-                            // 平滑滚动到标题位置
-                            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        });
-
-                        // 添加到目录
-                        document.getElementById('toc').appendChild(tocItem);
-                    } else if (currentSection) {
-                        // 将内容添加到当前章节
-                        currentSection.appendChild(node.cloneNode(true));
-                        node.remove();
-                    }
-                });
-
-                // 默认展开第一个h1及其所有子内容
-                const firstSection = document.querySelector('.content-section');
-                if (firstSection) {
-                    firstSection.classList.add('active');
-                    let nextNode = firstSection.nextElementSibling;
-                    while (nextNode) {
-                        if (nextNode.classList.contains('content-section')) {
-                            const nextTitle = nextNode.querySelector('h1');
-                            if (nextTitle) break;
-                        }
-                        nextNode.classList.add('active');
-                        nextNode = nextNode.nextElementSibling;
-                    }
-
-                    // 高亮第一个目录项
-                    const firstTocItem = document.querySelector('.toc-item');
-                    if (firstTocItem) {
-                        firstTocItem.classList.add('active');
+        tocItem.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // 更新目录高亮
+            document.querySelectorAll('.toc-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            tocItem.classList.add('active');
+            
+            // 获取当前点击的章节
+            const targetSection = document.getElementById(tocItem.dataset.section);
+            
+            // 隐藏所有章节
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // 显示当前章节及其所有子内容
+            targetSection.classList.add('active');
+            let nextNode = targetSection.nextElementSibling;
+            
+            // 遍历后续节点，直到遇到同级或更高级标题
+            while (nextNode) {
+                if (nextNode.classList.contains('content-section')) {
+                    const nextTitle = nextNode.querySelector('h1, h2, h3, h4, h5, h6');
+                    if (nextTitle) {
+                        const nextLevel = parseInt(nextTitle.nodeName[1]);
+                        if (nextLevel <= level) break; // 遇到同级或更高级标题时停止
                     }
                 }
+                nextNode.classList.add('active');
+                nextNode = nextNode.nextElementSibling;
+            }
+            
+            // 平滑滚动到标题位置
+            targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        
+        // 添加到目录
+        document.getElementById('toc').appendChild(tocItem);
+    } else if (currentSection) {
+        // 将内容添加到当前章节
+        currentSection.appendChild(node.cloneNode(true));
+        node.remove();
+    }
+});
+
+// 默认展开第一个h1及其所有子内容
+const firstSection = document.querySelector('.content-section');
+if (firstSection) {
+    firstSection.classList.add('active');
+    let nextNode = firstSection.nextElementSibling;
+    while (nextNode) {
+        if (nextNode.classList.contains('content-section')) {
+            const nextTitle = nextNode.querySelector('h1');
+            if (nextTitle) break;
+        }
+        nextNode.classList.add('active');
+        nextNode = nextNode.nextElementSibling;
+    }
+    
+    // 高亮第一个目录项
+    const firstTocItem = document.querySelector('.toc-item');
+    if (firstTocItem) {
+        firstTocItem.classList.add('active');
+    }
+}
             })
             .catch(error => {
                 loader.innerHTML = `<p style="color: #EB22CB;">错误: ${error.message}</p>`;
                 console.error(error);
-
+                
                 // 使用备用内容
-                const fallbackMd = `# \n## 欢迎使用PiscTrace`;
+                const fallbackMd = `# 
+                ## 欢迎使用PiscTrace`;
                 document.getElementById('content').innerHTML = marked.parse(fallbackMd);
             });
-        const models = [
-<!--    'wanko',-->
-<!--    'tororo',-->
-    'shizuku',
-<!--    'izumi',-->
-<!--    'hijiki'-->
-  ];
-  const randomModel = models[Math.floor(Math.random() * models.length)];
-  const modelUrl = `https://unpkg.com/live2d-widget-model-${randomModel}@1.0.5/assets/${randomModel}.model.json`;
-
-        // 初始化右下角模型
-        L2Dwidget.init({
-            model: {
-                jsonPath: modelUrl,       },
-            display: {
-                position: 'right',
-                width: 160,
-                height: 160,
-                canvasId: 'live2d-dog',
-            },
-            react: {
-                opacityDefault: 1,
-                opacityOnHover: 0.2,
-            },
-        });
     </script>
 </body>
 </html>
