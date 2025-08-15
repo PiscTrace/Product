@@ -262,7 +262,7 @@ OpenCV 提供强大的图像预处理与后处理功能，YOLO（You Only Look O
 <details>
 <summary><strong>点击查看解压密码</strong></summary>
 
-**解压密码：20245108**  
+**解压密码：202405108**  
 
 > 输入解压密码即表示：
 > - 您已经拥有支持运行的平台
