@@ -72,7 +72,10 @@ OpenCV 提供强大的图像预处理与后处理功能，YOLO（You Only Look O
 | **插件系统**     | 支持 Python 插件扩展，便于集成自定义算法                          |
 | **插件接口**     | 提供像素级矩阵访问，支持 ROI 区域处理和高级图像操作              |
 
+## 迅速升级最新版本
 
+- 当您已经拥有完整的程序文件包时可自行下载并替换获得最新的版本
+- [PiscTrace.exe](https://gitcode.com/weixin_43607107/PiscTrace/releases/download/PiscTrace.exe/PiscTrace.exe)
 
 ## 版本功能对比
 <!-- <span style="color:red; font-weight:bold;"> 限时优惠 5 折 ！ </span> -->
@@ -109,6 +112,12 @@ OpenCV 提供强大的图像预处理与后处理功能，YOLO（You Only Look O
 
 ### 渲染与保存
 - 输出格式：图像.png、视频.mp4
+
+## 迅速升级最新版本
+
+- 当您已经拥有完整的程序文件包时可自行下载并替换获得最新的版本
+- [PiscCode.exe](https://gitcode.com/weixin_43607107/PiscTrace/releases/download/PiscCode.exe/PiscCode.exe)
+
 
 ## 版本功能对比
 <!-- <span style="color:red; font-weight:bold;"> 限时优惠 5 折 ！ </span> -->
