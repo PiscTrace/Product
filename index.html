@@ -2,570 +2,591 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PiscTrace</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PiscTrace</title>
 
-  <link href="static/css/css2.css" rel="stylesheet">
+    <link href="static/css/css2.css" rel="stylesheet">
 
-  <!-- ==========favicon ============-->
-  <link rel="shortcut icon" href="./assets/image/favicon.png" type="image/x-icon">
-  <!-- =========bootstrap ============-->
-  <link rel="stylesheet" href="static/css/bootstrap.min.css">
-  <!-- =========fontawesome ============-->
-  <link rel="stylesheet" href="static/css/all.min.css">
-  <!-- =========animate ============-->
-  <link rel="stylesheet" href="static/css/animate.min.css">
-  <!-- =========venobox ============-->
-  <link rel="stylesheet" href="static/css/venobox.min.css">
-  <!-- =========css================== -->
-  <link rel="stylesheet" href="static/css/style.css">
-  <!-- =========responsive======== -->
-  <link rel="stylesheet" href="static/css/responsive.css">
+    <!-- ==========favicon ============-->
+    <link rel="shortcut icon" href="./assets/image/favicon.png" type="image/x-icon">
+    <!-- =========bootstrap ============-->
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <!-- =========fontawesome ============-->
+    <link rel="stylesheet" href="static/css/all.min.css">
+    <!-- =========animate ============-->
+    <link rel="stylesheet" href="static/css/animate.min.css">
+    <!-- =========venobox ============-->
+    <link rel="stylesheet" href="static/css/venobox.min.css">
+    <!-- =========css================== -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <!-- =========responsive======== -->
+    <link rel="stylesheet" href="static/css/responsive.css">
 </head>
 
 <body>
 
-  <!-- ================ start nav bar=========== -->
-  <!-- <nav class="navbar navbar-expand-md main-menu">
+<!-- ================ start nav bar=========== -->
+<!-- <nav class="navbar navbar-expand-md main-menu">
+  <div class="container">
+    <a class="navbar-brand" href=""><img src="static/picture/logo-10.png" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="service.html">Service</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="service.html">Gallery</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="contact.html">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="404.html">404</a>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" data-bs-toggle="modal" data-bs-target="#searchModal">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> -->
+
+<!-- Search Modal -->
+<!-- <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="searchModalLabel">Search</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="#" method="GET">
+          <div class="mb-3">
+            <input type="text" class="form-control" name="query" placeholder="Type to search...">
+          </div>
+          <button type="submit" class="shadow__btn w-100 mt-3 mb-2">Search</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<!-- ================end nav bar=========== -->
+
+<!-- start banner-section -->
+
+<section id="banner" style="background: url(static/image/1.png) no-repeat center/cover;">
     <div class="container">
-      <a class="navbar-brand" href=""><img src="static/picture/logo-10.png" alt=""></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="service.html">Service</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="service.html">Gallery</a>
-          </li>
-         
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="404.html">404</a>
-          </li>
-          <li class="nav-item">
-            <button class="nav-link" data-bs-toggle="modal" data-bs-target="#searchModal">
-              <i class="fa fa-search" aria-hidden="true"></i>
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav> -->
-  
-  <!-- Search Modal -->
-  <!-- <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="searchModalLabel">Search</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <form action="#" method="GET">
-            <div class="mb-3">
-              <input type="text" class="form-control" name="query" placeholder="Type to search...">
-            </div>
-            <button type="submit" class="shadow__btn w-100 mt-3 mb-2">Search</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div> -->
-  
-
-  <!-- ================end nav bar=========== -->
-
-  <!-- start banner-section -->
-
-  <section id="banner" style="background: url(static/image/1.png) no-repeat center/cover;">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="wow animate__animated animate__fadeInLeft banner-text">
-            <h1>PiscTrace</h1>
-            <br><br>
-            <h4>功能强大的机器视觉桌面应用</h4>
-            <br>
-            <p>无论是静态图片、实时视频流、摄像头视频流，还是网络视频流<br>
-              都能高效地进行处理、分析和渲染<br>
-              通过整合 OpenCV、MiDaS 和 YOLO 等先进技术,成为一款适用于多种应用场景的视觉分析工具。</p> 
-            <div class="main-btn">
-              <a href="doc.html">· 使用文档 ></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6"></div>
-      </div>
-    </div>
-
-  </section>
-  <!-- start banner-section -->
-
-  <!-- ==========start gallary section ===========================================-->
-  <section id="gallery">
-    <div class="container">
-      <div class="row ">
-        <div class="wow animate__animated animate__fadeInLeft col-md-4">
-          <div class="gallery-img">
-            <img src="static/picture/box.jpg" class="w-100" alt="">
-          </div>
-          <div class="gallery-text text-center mt-3">
-            <h4>对象检测</h4>
-          </div>
-        </div>
-        <div class="wow animate__animated animate__fadeInUp col-md-4">
-          <div class="gallery-img">
-            <img src="static/picture/seg.jpg" class="w-100" alt="">
-          </div>
-          <div class="gallery-text text-center mt-3">
-            <h4>实例分割</h4>
-          </div>
-        </div>
-        <div class="wow animate__animated animate__fadeInRight col-md-4">
-          <div class="gallery-img">
-            <img src="static/picture/pose.jpg" class="w-100" alt="">
-          </div>
-          <div class="gallery-text text-center mt-3">
-            <h4>姿态估计</h4>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-  <!-- ==========end gallary section ===========================================-->
-
-  <section id="banner-2">
-    <div class="container ">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="row mt-5">
-            <div class="wow animate__animated animate__fadeInUp col-md-6 col-sm-6">
-              <div class="explore-content d-flex">
-                <img src="static/picture/cv.png" class="img-fluid w-100" alt="">
-              </div>
-            </div>
-            <div class="wow animate__animated animate__fadeInUp col-md-6 col-sm-6">
-              <div class="explore-content d-flex">
-                <img src="static/picture/yolo_midas.gif" class="img-fluid w-100" alt="">
-              </div>
-            </div>
-          </div>
-          <div class="row">
+        <div class="row">
             <div class="col-md-12">
-              <div class="row mt-5">
-                <div class="col-sm-4 col-md-3 m-auto ">
-                  <div class="wow animate__animated animate__fadeInUp counter_inner">
-                    <!-- <h4 class="counterr">OpenCV</h4> -->
-                    <span>OpenCV</span>
-                    <p>全面图像优化</p>
-                  </div>
+                <div class="wow animate__animated animate__fadeInLeft banner-text">
+                    <h1>PiscTrace</h1>
+                    <br><br>
+                    <h4>功能强大的机器视觉桌面应用</h4>
+                    <br>
+                    <p>无论是静态图片、实时视频流、摄像头视频流，还是网络视频流<br>
+                        都能高效地进行处理、分析和渲染<br>
+                        通过整合 OpenCV、MiDaS 和 YOLO 等先进技术,成为一款适用于多种应用场景的视觉分析工具。</p>
+                    <div class="main-btn">
+                        <a href="doc.html">· 使用文档 ></a>
+                    </div>
                 </div>
-                <div class="col-sm-4 col-md-3 m-auto">
-                  <div class="wow animate__animated animate__fadeInUp counter_inner">
-                    <!-- <h4 class="counterr">YOLO</h4> -->
-                    <span>YOLO</span>
-                    <p>实时物体检测</p>
-                  </div>
-                </div>
-                <div class="col-sm-4 col-md-3 m-auto">
-                  <div class="wow animate__animated animate__fadeInUp counter_inner">
-                    <!-- <h4 class="counterr">MiDaS</h4> -->
-                    <span>MiDaS</span>
-                    <p>单目深度估计</p>
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
+            <div class="col-md-6"></div>
         </div>
-        <div class="col-md-6">
-          <div class="wow animate__animated animate__fadeInUp explore-right">
-            <h2><span>YOLO & MiDaS <br> OpenCV </span> 强力加持</h2>
-            <p>集成了 OpenCV、MiDaS 和 YOLO 技术的桌面应用，致力于为用户提供高效的图像和视频流处理解决方案。<br>
-              无论是静态图片、实时视频流、摄像头视频流还是网络视频流，PiscTrace 都能快速处理、分析并渲染输出。<br>
-              通过其强大的图像预处理和物体检测功能，在智能监控、自动驾驶、工业检测、增强现实等领域展现出广泛的应用潜力。</p>
-            <!-- <div class="main-btn">
-              <a class="shadow__btn" href="about.html">Read More</a>
-            </div> -->
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
 
+</section>
+<!-- start banner-section -->
 
-  <!--===================== banner-3 ==================-->
+<!-- ==========start gallary section ===========================================-->
+<section id="gallery">
+    <div class="container">
+        <div class="row ">
+            <div class="wow animate__animated animate__fadeInLeft col-md-4">
+                <div class="gallery-img">
+                    <img src="static/picture/box.jpg" class="w-100" alt="">
+                </div>
+                <div class="gallery-text text-center mt-3">
+                    <h4>对象检测</h4>
+                </div>
+            </div>
+            <div class="wow animate__animated animate__fadeInUp col-md-4">
+                <div class="gallery-img">
+                    <img src="static/picture/seg.jpg" class="w-100" alt="">
+                </div>
+                <div class="gallery-text text-center mt-3">
+                    <h4>实例分割</h4>
+                </div>
+            </div>
+            <div class="wow animate__animated animate__fadeInRight col-md-4">
+                <div class="gallery-img">
+                    <img src="static/picture/pose.jpg" class="w-100" alt="">
+                </div>
+                <div class="gallery-text text-center mt-3">
+                    <h4>姿态估计</h4>
+                </div>
+            </div>
 
-  <section id="banner-3">
+        </div>
+    </div>
+</section>
+<!-- ==========end gallary section ===========================================-->
+
+<section id="banner-2">
     <div class="container ">
-      <div class="row">
-        <div class="col-md-6 text-light order-2 order-md-1 order-lg-1">
-          <div class="wow animate__animated animate__fadeInLeft section-left">
-            <h2><span>可编程接口</span>满足个性需求</h2>
-            <p class="pera-1">提供了自定义接口的支持<br>
-              允许用户加载和使用自定义的计算机视觉模型和算法<br>
-              通过简单的接口配置<br>
-              用户可以将自己的深度学习模型<br>
-              算法或其他库集成到平台中<br>
-              实现更加个性化的功能需求
-                <!-- <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut tempore, ad doloribus omnis
-                  dolorum pariatur ipsam ullam quos saepe laudantium nisi. Molestiae quam eum quos? Beatae
-                  vero dolores sit eius.</span> -->
-            </p>
-            <!-- <div class="main-btn">
-              <a class="shadow__btn" href="about.html">Read More</a>
-            </div> -->
-          </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row mt-5">
+                    <div class="wow animate__animated animate__fadeInUp col-md-6 col-sm-6">
+                        <div class="explore-content d-flex">
+                            <img src="static/picture/cv.png" class="img-fluid w-100" alt="">
+                        </div>
+                    </div>
+                    <div class="wow animate__animated animate__fadeInUp col-md-6 col-sm-6">
+                        <div class="explore-content d-flex">
+                            <img src="static/picture/yolo_midas.gif" class="img-fluid w-100" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row mt-5">
+                            <div class="col-sm-4 col-md-3 m-auto ">
+                                <div class="wow animate__animated animate__fadeInUp counter_inner">
+                                    <!-- <h4 class="counterr">OpenCV</h4> -->
+                                    <span>OpenCV</span>
+                                    <p>全面图像优化</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-md-3 m-auto">
+                                <div class="wow animate__animated animate__fadeInUp counter_inner">
+                                    <!-- <h4 class="counterr">YOLO</h4> -->
+                                    <span>YOLO</span>
+                                    <p>实时物体检测</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-md-3 m-auto">
+                                <div class="wow animate__animated animate__fadeInUp counter_inner">
+                                    <!-- <h4 class="counterr">MiDaS</h4> -->
+                                    <span>MiDaS</span>
+                                    <p>单目深度估计</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="wow animate__animated animate__fadeInUp explore-right">
+                    <h2><span>YOLO & MiDaS <br> OpenCV </span> 强力加持</h2>
+                    <p>集成了 OpenCV、MiDaS 和 YOLO 技术的桌面应用，致力于为用户提供高效的图像和视频流处理解决方案。<br>
+                        无论是静态图片、实时视频流、摄像头视频流还是网络视频流，PiscTrace 都能快速处理、分析并渲染输出。<br>
+                        通过其强大的图像预处理和物体检测功能，在智能监控、自动驾驶、工业检测、增强现实等领域展现出广泛的应用潜力。
+                    </p>
+                    <!-- <div class="main-btn">
+                      <a class="shadow__btn" href="about.html">Read More</a>
+                    </div> -->
+                </div>
+            </div>
         </div>
-        <div class="col-md-5 m-auto order-1 order-md-2 order-lg-2">
-          <div class="wow animate__animated animate__fadeInRight section-right">
-            <img src="static/picture/code.png" class="w-100" alt="">
-          </div>
+    </div>
+</section>
+
+
+<!--===================== banner-3 ==================-->
+
+<section id="banner-3">
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-6 text-light order-2 order-md-1 order-lg-1">
+                <div class="wow animate__animated animate__fadeInLeft section-left">
+                    <h2><span>可编程接口</span>满足个性需求</h2>
+                    <p class="pera-1">提供了自定义接口的支持<br>
+                        允许用户加载和使用自定义的计算机视觉模型和算法<br>
+                        通过简单的接口配置<br>
+                        用户可以将自己的深度学习模型<br>
+                        算法或其他库无缝集成<br>
+                        迅速实现视图定制处理业务<br>
+                        实现更加个性化的功能需求
+                        <!-- <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut tempore, ad doloribus omnis
+                          dolorum pariatur ipsam ullam quos saepe laudantium nisi. Molestiae quam eum quos? Beatae
+                          vero dolores sit eius.</span> -->
+                    </p>
+                    <!-- <div class="main-btn">
+                      <a class="shadow__btn" href="about.html">Read More</a>
+                    </div> -->
+                </div>
+            </div>
+            <div class="col-md-5 m-auto order-1 order-md-2 order-lg-2">
+                <div class="wow animate__animated animate__fadeInRight section-right">
+                    <img src="static/picture/code.png" class="w-100" alt="">
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
-  </section>
-  <!-- banner-3 end -->
+</section>
+<!-- banner-3 end -->
 
-  <!-- gallery start -->
-  <section id="portfolio">
+<!-- gallery start -->
+<section id="portfolio">
     <div class="container px-lg-0">
-      <div class="row">
-        <div class="col-lg-7 m-auto">
-          <div class="wow animate__animated animate__fadeInUp common_head text-center">
-            <h4>场景应用</h4>
-            <p>我们特别选择了一些满足特性演示渲染效果</p>
-          </div>
-        </div>
-      </div>
-      <div class="portfolio_main">
         <div class="row">
-          <div class="col-lg-12">
-            <div class="filter_menu">
-              <div class="filter_menu">
-                <div class="overly"></div>
-                <ul class="wow animate__animated animate__fadeInUp d-flex flex-wrap" data-wow-delay=".3s">
-                  <li class="mixitup-control-active" data-filter="all">All</li>
-                  <li data-filter=".opencv">OpenCV</li>
-                  <li data-filter=".yolo">YOLO</li>
-                  <li data-filter=".midas">MiDaS</li>
-                  <li data-filter=".diy">DIY</li>
-                </ul>
-                
-              </div>
-              <div class="wow animate__animated animate__fadeInUp filter_img">
-                  <div class="img mix midas">
-                  <img src="static/picture/c70 00_00_00-00_00_30.gif" alt="gallery_img6">
-                  <div class="overly">
-                    <a class="venobox" data-gall="gallery01" href="static/picture/c70 00_00_00-00_00_30.gif"><i class="fa-solid fa-plus"></i></a>
-                  </div>
+            <div class="col-lg-7 m-auto">
+                <div class="wow animate__animated animate__fadeInUp common_head text-center">
+                    <h4>场景应用</h4>
+                    <p>我们特别选择了一些满足特性演示渲染效果</p>
                 </div>
-
-                 <div class="img mix yolo">
-                  <img src="static/picture/mp 00_00_00-00_00_30.gif" alt="gallery_img7">
-                  <div class="overly">
-                    <a class="venobox" data-gall="gallery01" href="static/picture/mp 00_00_00-00_00_30.gif"><i class="fa-solid fa-plus"></i></a>
-                  </div>
-                </div>
-      
-                <div class="img mix opencv">
-                  <img src="static/picture/cv_1 00_00_00-00_00_30.gif" alt="gallery_img3">
-                  <div class="overly">
-                    <a class="venobox" data-gall="gallery01" href="static/picture/cv_1 00_00_00-00_00_30.gif"><i class="fa-solid fa-plus"></i></a>
-                  </div>
-                </div>
-                 <div class="img mix yolo">
-                  <img src="static/picture/traffic 00_00_00-00_00_30.gif" alt="gallery_img7">
-                  <div class="overly">
-                    <a class="venobox" data-gall="gallery01" href="static/picture/traffic 00_00_00-00_00_30.gif"><i class="fa-solid fa-plus"></i></a>
-                  </div>
-                </div>
-                 <div class="img mix yolo">
-                  <img src="static/picture/count 00_00_00-00_00_30.gif" alt="gallery_img7">
-                  <div class="overly">
-                    <a class="venobox" data-gall="gallery01" href="static/picture/count 00_00_00-00_00_30.gif"><i class="fa-solid fa-plus"></i></a>
-                  </div>
-                </div>
-                <div class="img mix opencv diy">
-                  <img src="static/picture/dc 00_00_00-00_00_30.gif" alt="gallery_img5">
-                  <div class="overly">
-                    <a class="venobox" data-gall="gallery01" href="static/picture/dc 00_00_00-00_00_30.gif"><i class="fa-solid fa-plus"></i></a>
-                  </div>
-                </div>
-                  <div class="img mix diy opencv">
-                  <img src="static/picture/cv_l 00_00_00-00_00_30.gif" alt="gallery_img12">
-                  <div class="overly">
-                    <a class="venobox" data-gall="gallery01" href="static/picture/cv_l 00_00_00-00_00_30.gif"><i class="fa-solid fa-plus"></i></a>
-                  </div>
-                </div>
-           
-                <div class="img mix yolo midas">
-                  <img src="static/picture/c70p 00_00_00-00_00_30.gif" alt="gallery_img7">
-                  <div class="overly">
-                    <a class="venobox" data-gall="gallery01" href="static/picture/c70p 00_00_00-00_00_30.gif"><i class="fa-solid fa-plus"></i></a>
-                  </div>
-                </div>
-                   <div class="img mix yolo opencv">
-                  <img src="static/picture/pt 00_00_00-00_00_30.gif" alt="gallery_img12">
-                  <div class="overly">
-                    <a class="venobox" data-gall="gallery01" href="static/picture/pt 00_00_00-00_00_30.gif"><i class="fa-solid fa-plus"></i></a>
-                  </div>
-                </div>
-                <div class="img mix diy opencv">
-                  <img src="static/picture/cv_f 00_00_00-00_00_30.gif" alt="gallery_img12">
-                  <div class="overly">
-                    <a class="venobox" data-gall="gallery01" href="static/picture/cv_f 00_00_00-00_00_30.gif"><i class="fa-solid fa-plus"></i></a>
-                  </div>
-                </div>
-                <div class="img mix yolo">
-                  <img src="static/picture/seg 00_00_00-00_00_30.gif" alt="gallery_img1">
-                  <div class="overly">
-                    <a class="venobox" data-gall="gallery01" href="static/picture/seg 00_00_00-00_00_30.gif"><i class="fa-solid fa-plus"></i></a>
-                  </div>
-                </div>
-                 <div class="img mix yolo opencv">
-                  <img src="static/picture/track00_00_00-00_00_30.gif" alt="gallery_img1">
-                  <div class="overly">
-                    <a class="venobox" data-gall="gallery01" href="static/picture/track00_00_00-00_00_30.gif"><i class="fa-solid fa-plus"></i></a>
-                  </div>
-                </div>
-             
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
-  <!-- gallery end -->
-  <!-- pricing start -->
-  <section id="pricing">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-7 m-auto">
-          <div class="wow animate__animated animate__fadeInUp common_head mb-5">
-            <h4 class="text-center text-light">访问资源</h4>
-            <p class="text-center text-light">应用资源下载，博客记录和分享实践心得</p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="pricing-table">
+        <div class="portfolio_main">
             <div class="row">
-              <div class="col-sm-4">
-                <div class="wow animate__animated animate__fadeInLeft card text-center">
-                  <div class="title">
-                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                    <h2>PiscTrace</h2>
-                    <br>
-                  </div>
-                  <!-- <div class="price"> -->
-                    <!-- <h4><sup>￥</sup>9.9</h4> -->
-                  <!-- </div> -->
-                  <div class="option">
-                    <ul>
-                      <li><i class="fa fa-check" aria-hidden="true"></i> OpenCV 预设</li>
-                      <li><i class="fa fa-check" aria-hidden="true"></i> MiDaS 单目景深增强</li>
-                      <li><i class="fa fa-check" aria-hidden="true"></i> YOLO 深度集成</li>
-                      <li><i class="fa fa-check" aria-hidden="true"></i> DIY 开发接口</li>
-                    </ul>
-                  </div>
-                  <!-- <a href="https://github.com/PiscTrace/Product/releases/tag/PiscTrace">Download ></a> -->
-                  <a href="https://gitcode.com/weixin_43607107/PiscTrace/releases/download/PiscTrace/PiscTrace-影迹.zip">Download ></a>
+                <div class="col-lg-12">
+                    <div class="filter_menu">
+                        <div class="filter_menu">
+                            <div class="overly"></div>
+                            <ul class="wow animate__animated animate__fadeInUp d-flex flex-wrap" data-wow-delay=".3s">
+                                <li class="mixitup-control-active" data-filter="all">All</li>
+                                <li data-filter=".opencv">OpenCV</li>
+                                <li data-filter=".yolo">YOLO</li>
+                                <li data-filter=".midas">MiDaS</li>
+                                <li data-filter=".diy">DIY</li>
+                            </ul>
+
+                        </div>
+                        <div class="wow animate__animated animate__fadeInUp filter_img">
+                            <div class="img mix midas">
+                                <img src="static/picture/c70 00_00_00-00_00_30.gif" alt="gallery_img6">
+                                <div class="overly">
+                                    <a class="venobox" data-gall="gallery01"
+                                       href="static/picture/c70 00_00_00-00_00_30.gif"><i class="fa-solid fa-plus"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="img mix yolo">
+                                <img src="static/picture/mp 00_00_00-00_00_30.gif" alt="gallery_img7">
+                                <div class="overly">
+                                    <a class="venobox" data-gall="gallery01"
+                                       href="static/picture/mp 00_00_00-00_00_30.gif"><i
+                                            class="fa-solid fa-plus"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="img mix opencv">
+                                <img src="static/picture/cv_1 00_00_00-00_00_30.gif" alt="gallery_img3">
+                                <div class="overly">
+                                    <a class="venobox" data-gall="gallery01"
+                                       href="static/picture/cv_1 00_00_00-00_00_30.gif"><i class="fa-solid fa-plus"></i></a>
+                                </div>
+                            </div>
+                            <div class="img mix yolo">
+                                <img src="static/picture/traffic 00_00_00-00_00_30.gif" alt="gallery_img7">
+                                <div class="overly">
+                                    <a class="venobox" data-gall="gallery01"
+                                       href="static/picture/traffic 00_00_00-00_00_30.gif"><i
+                                            class="fa-solid fa-plus"></i></a>
+                                </div>
+                            </div>
+                            <div class="img mix yolo">
+                                <img src="static/picture/count 00_00_00-00_00_30.gif" alt="gallery_img7">
+                                <div class="overly">
+                                    <a class="venobox" data-gall="gallery01"
+                                       href="static/picture/count 00_00_00-00_00_30.gif"><i
+                                            class="fa-solid fa-plus"></i></a>
+                                </div>
+                            </div>
+                            <div class="img mix opencv diy">
+                                <img src="static/picture/dc 00_00_00-00_00_30.gif" alt="gallery_img5">
+                                <div class="overly">
+                                    <a class="venobox" data-gall="gallery01"
+                                       href="static/picture/dc 00_00_00-00_00_30.gif"><i
+                                            class="fa-solid fa-plus"></i></a>
+                                </div>
+                            </div>
+                            <div class="img mix diy opencv">
+                                <img src="static/picture/cv_l 00_00_00-00_00_30.gif" alt="gallery_img12">
+                                <div class="overly">
+                                    <a class="venobox" data-gall="gallery01"
+                                       href="static/picture/cv_l 00_00_00-00_00_30.gif"><i class="fa-solid fa-plus"></i></a>
+                                </div>
+                            </div>
+
+                            <div class="img mix yolo midas">
+                                <img src="static/picture/c70p 00_00_00-00_00_30.gif" alt="gallery_img7">
+                                <div class="overly">
+                                    <a class="venobox" data-gall="gallery01"
+                                       href="static/picture/c70p 00_00_00-00_00_30.gif"><i class="fa-solid fa-plus"></i></a>
+                                </div>
+                            </div>
+                            <div class="img mix yolo opencv">
+                                <img src="static/picture/pt 00_00_00-00_00_30.gif" alt="gallery_img12">
+                                <div class="overly">
+                                    <a class="venobox" data-gall="gallery01"
+                                       href="static/picture/pt 00_00_00-00_00_30.gif"><i
+                                            class="fa-solid fa-plus"></i></a>
+                                </div>
+                            </div>
+                            <div class="img mix diy opencv">
+                                <img src="static/picture/cv_f 00_00_00-00_00_30.gif" alt="gallery_img12">
+                                <div class="overly">
+                                    <a class="venobox" data-gall="gallery01"
+                                       href="static/picture/cv_f 00_00_00-00_00_30.gif"><i class="fa-solid fa-plus"></i></a>
+                                </div>
+                            </div>
+                            <div class="img mix yolo">
+                                <img src="static/picture/seg 00_00_00-00_00_30.gif" alt="gallery_img1">
+                                <div class="overly">
+                                    <a class="venobox" data-gall="gallery01"
+                                       href="static/picture/seg 00_00_00-00_00_30.gif"><i class="fa-solid fa-plus"></i></a>
+                                </div>
+                            </div>
+                            <div class="img mix yolo opencv">
+                                <img src="static/picture/track00_00_00-00_00_30.gif" alt="gallery_img1">
+                                <div class="overly">
+                                    <a class="venobox" data-gall="gallery01"
+                                       href="static/picture/track00_00_00-00_00_30.gif"><i class="fa-solid fa-plus"></i></a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="wow animate__animated animate__fadeInUp card text-center">
-                  <div class="title">
-                    <i class="fa fa-plane" aria-hidden="true"></i>
-                    <h2>PiscCode</h2>
-                  </div>
-                  <br>
-                  <!-- <div class="price">
-                    <h4><sup>￥</sup>99.9</h4>
-                  </div> -->
-                  <div class="option">
-                    <ul>
-                      <li><i class="fa fa-check" aria-hidden="true"></i> Developer 开发模式</li>
-                      <li><i class="fa fa-check" aria-hidden="true"></i> Free 纯自定义计算</li>
-                      <li><i class="fa fa-check" aria-hidden="true"></i> PiscTrace 共有架构</li>
-                      <li><i class="fa fa-check" aria-hidden="true"></i> Platfrom 导入到输出</li>
-                    </ul>
-                  </div>
-                  <!-- <a href="https://github.com/PiscTrace/Product/releases/tag/PiscCode">Download ></a> -->
-                  <a href="https://gitcode.com/weixin_43607107/PiscTrace/releases/download/PiscCode/PiscCode-影迹.zip">Download ></a>
-                </div>
-              </div>
-              <div class="col-sm-4">
-                <div class="wow animate__animated animate__fadeInRight card text-center">
-                  <div class="title">
-                    <i class="fa fa-rocket" aria-hidden="true"></i>
-                    <h2>Documents</h2>
-                  </div>
-                    <br>
-                  <!-- <div class="price">
-                    <h4><sup>￥</sup>199.9</h4>
-                  </div> -->
-                  <div class="option">
-                    <ul>
-                      <li><i class="fa fa-check" aria-hidden="true"></i> YOLO 应用案例</li>
-                      <li><i class="fa fa-check" aria-hidden="true"></i> Demo 实现个性需求</li>
-                      <li><i class="fa fa-check" aria-hidden="true"></i> OpenCV 实例演示</li>
-                      <li><i class="fa fa-check" aria-hidden="true"></i> Quick 实现视觉处理</li>
-                    </ul>
-                  </div>
-                  <a href="https://blog.csdn.net/weixin_43607107">Order Now ></a>
-                </div>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </section>
-  <!-- pricing end -->
-  <!-- testimonial start -->
-  <section id="testimonials" class="testimonials">
+</section>
+<!-- gallery end -->
+<!-- pricing start -->
+<section id="pricing">
     <div class="container">
-      <div class="row">
-        <div class="col-md-5">
-          <div class="wow animate__animated animate__fadeInLeft common-heading mb-5">
-            <h4 class="pre-title">适用人群
-              <!-- <span>About Us</span> -->
-            </h4>
-            <p>我们希望您是一位对新技术充满好奇，乐于动手实践，具备持续学习能力的人。<br>
-              您对机器视觉领域抱有浓厚兴趣，能够主动探索前沿技术，深入理解图像处理原理，并将其应用于实际项目中。<br>
-              我们期待与您共同推动创新，为视觉智能的发展贡献力量。</p>
-          </div>
-        </div>
-        <div class="wow animate__animated animate__fadeInRight col-md-7">
-          <div class="slider-indicator" data-wow-delay=".2s">
-            <img src="static/picture/student.png" class="active" alt="img" data-id="0">
-            <img src="static/picture/doctor.png" alt="img" data-id="1">
-            <img src="static/picture/teacher.png" alt="img" data-id="2">
-            <img src="static/picture/other.png" alt="img" data-id="3">
-          </div>
-
-          <div class="slider">
-            <div class="slide active">
-              <p>
-               我是一名对人工智能，尤其是机器视觉领域充满兴趣的学生。<br>
-               一直以来，我都喜欢动手实践，通过亲自参与项目来加深对图像处理与视觉算法的理解。<br>
-               这个平台对我而言是一个非常宝贵的机会，让我能够专注于图像和视频的处理工作，在实际应用中提升自己的技术能力，也为将来深入AI领域打下坚实的基础。
-              </p>
-              <div class="client-info">
-                <h3>入门学生</h3>
-                <!-- <span>学生</span> -->
-              </div>
-            </div>
-            <div class="slide">
-              <p>
-               我并不是一名专业的开发人员，但在日常的实验工作中，我经常需要用到图像采集和处理相关的监控功能。<br>
-               借助这个平台，在不需要太多开发背景的前提下，也能实现高效、稳定的图像处理和视觉分析，为实验提供有力支持，同时逐步提升自己的技术理解和应用能力。
-              </p>
-              <div class="client-info">
-                <h3>实验研究</h3>
-                <!-- <span>实验室</span> -->
-              </div>
-            </div>
-            <div class="slide">
-              <p>
-                作为一名长期从事相关工作的从业者和教育工作者，<br>
-                非常高兴看到这个平台不仅降低了学习门槛，<br>
-                还为学生提供了一个可操作性强、资源丰富的实践环境，让他们能够更高效地探索图像处理技术，激发创新思维。
-              </p>
-              <div class="client-info">
-                <h3>业内人士</h3>
-                <!-- <span>痴迷爱好者</span> -->
-              </div>
-            </div>
-              <div class="slide">
-              <p>
-                我对机器视觉充满兴趣，尤其对图像采集和处理的应用场景非常好奇。<br>
-                但在实际接触中我发现，完整的处理过程对于非专业背景的人来说门槛较高、过程繁琐。<br>
-                这样一个更友好、可操作性强的平台，专注于图像处理本身，减少不必要的技术负担，让我能够更专注地学习和探索这个领域的核心价值。
-              </p>
-              <div class="client-info">
-                <h3>技术爱好</h3>
-                <!-- <span>痴迷爱好者</span> -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- testimonial end -->
-
-  <!-- footer start -->
-   
-  <footer class="footer-section">
-   
-    <div class="copyright-area">
-      <div class="container">
         <div class="row">
-          <div class="col-lg-6 col-lg-6 text-center text-lg-left">
-            <div class="copyright-text">
-              <p>WeDo &copy; 2025.PiscTrace.<a target="_blank" >那雨倾城</a></p>
+            <div class="col-md-7 m-auto">
+                <div class="wow animate__animated animate__fadeInUp common_head mb-5">
+                    <h4 class="text-center text-light">访问资源</h4>
+                    <p class="text-center text-light">应用资源下载，博客记录和分享实践心得</p>
+                </div>
             </div>
-          </div>
-          <div class="col-lg-6 col-lg-6 d-none d-lg-block text-right">
-            <div class="footer-menu">
-              <ul>
-                <li>资源链接：</li>
-                <li><a href="https://docs.ultralytics.com">YOLO</a></li>
-                <li><a href="https://github.com/isl-org/MiDaS">MiDaS</a></li>
-                <li><a href="https://opencv.org/">OpenCV</a></li>
-                <li><a href="https://huggingface.co/">Huggingface</li>
-                <li><a href="https://developer.nvidia.com/cuda-zone">CUDA</a></li>
-                <li><a href="https://pytorch.org">Pytorch</a></li>
-              </ul>
-            </div>
-          </div>
         </div>
-      </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="pricing-table">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="wow animate__animated animate__fadeInLeft card text-center">
+                                <div class="title">
+                                    <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                                    <h2>PiscTrace</h2>
+                                    <br>
+                                </div>
+                                <!-- <div class="price"> -->
+                                <!-- <h4><sup>￥</sup>9.9</h4> -->
+                                <!-- </div> -->
+                                <div class="option">
+                                    <ul>
+                                        <li><i class="fa fa-check" aria-hidden="true"></i> OpenCV 预设</li>
+                                        <li><i class="fa fa-check" aria-hidden="true"></i> MiDaS 单目景深增强</li>
+                                        <li><i class="fa fa-check" aria-hidden="true"></i> YOLO 深度集成</li>
+                                        <li><i class="fa fa-check" aria-hidden="true"></i> DIY 开发接口</li>
+                                    </ul>
+                                </div>
+                                <!-- <a href="https://github.com/PiscTrace/Product/releases/tag/PiscTrace">Download ></a> -->
+                                <a href="https://gitcode.com/weixin_43607107/PiscTrace/releases/download/PiscTrace/PiscTrace-影迹.zip">Download
+                                    ></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="wow animate__animated animate__fadeInUp card text-center">
+                                <div class="title">
+                                    <i class="fa fa-plane" aria-hidden="true"></i>
+                                    <h2>PiscCode</h2>
+                                </div>
+                                <br>
+                                <!-- <div class="price">
+                                  <h4><sup>￥</sup>99.9</h4>
+                                </div> -->
+                                <div class="option">
+                                    <ul>
+                                        <li><i class="fa fa-check" aria-hidden="true"></i> Developer 开发模式</li>
+                                        <li><i class="fa fa-check" aria-hidden="true"></i> Free 纯自定义计算</li>
+                                        <li><i class="fa fa-check" aria-hidden="true"></i> PiscTrace 共有架构</li>
+                                        <li><i class="fa fa-check" aria-hidden="true"></i> Platfrom 导入到输出</li>
+                                    </ul>
+                                </div>
+                                <!-- <a href="https://github.com/PiscTrace/Product/releases/tag/PiscCode">Download ></a> -->
+                                <a href="https://gitcode.com/weixin_43607107/PiscTrace/releases/download/PiscCode/PiscCode-影迹.zip">Download
+                                    ></a>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="wow animate__animated animate__fadeInRight card text-center">
+                                <div class="title">
+                                    <i class="fa fa-rocket" aria-hidden="true"></i>
+                                    <h2>Documents</h2>
+                                </div>
+                                <br>
+                                <!-- <div class="price">
+                                  <h4><sup>￥</sup>199.9</h4>
+                                </div> -->
+                                <div class="option">
+                                    <ul>
+                                        <li><i class="fa fa-check" aria-hidden="true"></i> YOLO 应用案例</li>
+                                        <li><i class="fa fa-check" aria-hidden="true"></i> Demo 实现个性需求</li>
+                                        <li><i class="fa fa-check" aria-hidden="true"></i> OpenCV 实例演示</li>
+                                        <li><i class="fa fa-check" aria-hidden="true"></i> Quick 实现视觉处理</li>
+                                    </ul>
+                                </div>
+                                <a href="https://blog.csdn.net/weixin_43607107">Order Now ></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </footer>
-  <!-- footer section end -->
+</section>
+<!-- pricing end -->
+<!-- testimonial start -->
+<section id="testimonials" class="testimonials">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="wow animate__animated animate__fadeInLeft common-heading mb-5">
+                    <h4 class="pre-title">适用人群
+                        <!-- <span>About Us</span> -->
+                    </h4>
+                    <p>我们希望您是一位对新技术充满好奇，乐于动手实践，具备持续学习能力的人。<br>
+                        您对机器视觉领域抱有浓厚兴趣，能够主动探索前沿技术，深入理解图像处理原理，并将其应用于实际项目中。<br>
+                        我们期待与您共同推动创新，为视觉智能的发展贡献力量。</p>
+                </div>
+            </div>
+            <div class="wow animate__animated animate__fadeInRight col-md-7">
+                <div class="slider-indicator" data-wow-delay=".2s">
+                    <img src="static/picture/student.png" class="active" alt="img" data-id="0">
+                    <img src="static/picture/doctor.png" alt="img" data-id="1">
+                    <img src="static/picture/teacher.png" alt="img" data-id="2">
+                    <img src="static/picture/other.png" alt="img" data-id="3">
+                </div>
 
-  <!-- btn_top_bottom part start -->
-  <div class="btn_top_bottom">
+                <div class="slider">
+                    <div class="slide active">
+                        <p>
+                            我是一名对人工智能，尤其是机器视觉领域充满兴趣的学生。<br>
+                            一直以来，我都喜欢动手实践，通过亲自参与项目来加深对图像处理与视觉算法的理解。<br>
+                            这个平台对我而言是一个非常宝贵的机会，让我能够专注于图像和视频的处理工作，在实际应用中提升自己的技术能力，也为将来深入AI领域打下坚实的基础。
+                        </p>
+                        <div class="client-info">
+                            <h3>入门学生</h3>
+                            <!-- <span>学生</span> -->
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <p>
+                            我并不是一名专业的开发人员，但在日常的实验工作中，我经常需要用到图像采集和处理相关的监控功能。<br>
+                            借助这个平台，在不需要太多开发背景的前提下，也能实现高效、稳定的图像处理和视觉分析，为实验提供有力支持，同时逐步提升自己的技术理解和应用能力。
+                        </p>
+                        <div class="client-info">
+                            <h3>实验研究</h3>
+                            <!-- <span>实验室</span> -->
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <p>
+                            作为一名长期从事相关工作的从业者和教育工作者，<br>
+                            非常高兴看到这个平台不仅降低了学习门槛，<br>
+                            还为学生提供了一个可操作性强、资源丰富的实践环境，让他们能够更高效地探索图像处理技术，激发创新思维。
+                        </p>
+                        <div class="client-info">
+                            <h3>业内人士</h3>
+                            <!-- <span>痴迷爱好者</span> -->
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <p>
+                            我对机器视觉充满兴趣，尤其对图像采集和处理的应用场景非常好奇。<br>
+                            但在实际接触中我发现，完整的处理过程对于非专业背景的人来说门槛较高、过程繁琐。<br>
+                            这样一个更友好、可操作性强的平台，专注于图像处理本身，减少不必要的技术负担，让我能够更专注地学习和探索这个领域的核心价值。
+                        </p>
+                        <div class="client-info">
+                            <h3>技术爱好</h3>
+                            <!-- <span>痴迷爱好者</span> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- testimonial end -->
+
+<!-- footer start -->
+
+<footer class="footer-section">
+
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-lg-6 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>WeDo &copy; 2025.PiscTrace.<a target="_blank">那雨倾城</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-lg-6 d-none d-lg-block text-right">
+                    <div class="footer-menu">
+                        <ul>
+                            <li>资源链接：</li>
+                            <li><a href="https://docs.ultralytics.com">YOLO</a></li>
+                            <li><a href="https://github.com/isl-org/MiDaS">MiDaS</a></li>
+                            <li><a href="https://opencv.org/">OpenCV</a></li>
+                            <li><a href="https://huggingface.co/">Huggingface</li>
+                            <li><a href="https://developer.nvidia.com/cuda-zone">CUDA</a></li>
+                            <li><a href="https://pytorch.org">Pytorch</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- footer section end -->
+
+<!-- btn_top_bottom part start -->
+<div class="btn_top_bottom">
     <i class="fa-solid fa-arrow-up-long">
     </i>
-  </div>
-  <!-- btn_top_bottom part end -->
+</div>
+<!-- btn_top_bottom part end -->
 
 
-  <!-- footer end -->
+<!-- footer end -->
 
 
-  <!-- =====================js-bootstrap==================================== -->
-  <script src="static/js/jquery-1.12.4.min.js"></script>
-  <script src="static/js/bootstrap.min.js"></script>
-  <script src="static/js/popper.min.js"></script>
-  <script src="static/js/mixitup.min.js"></script>
-  <script src="static/js/venobox.min.js"></script>
-  <script src="static/js/wow.min.js"></script>
+<!-- =====================js-bootstrap==================================== -->
+<script src="static/js/jquery-1.12.4.min.js"></script>
+<script src="static/js/bootstrap.min.js"></script>
+<script src="static/js/popper.min.js"></script>
+<script src="static/js/mixitup.min.js"></script>
+<script src="static/js/venobox.min.js"></script>
+<script src="static/js/wow.min.js"></script>
 
-  <script src="static/js/jquery.counterup.min.js"></script>
-  <script src="static/js/waypoints.min.js"></script>
-  <script src="static/js/script.js"></script>
-  <script>
+<script src="static/js/jquery.counterup.min.js"></script>
+<script src="static/js/waypoints.min.js"></script>
+<script src="static/js/script.js"></script>
+<script>
     // >>>>>Mixit up js start
 
   var containerEl = document.querySelector('.filter_img');
@@ -582,7 +603,7 @@
   });
 
   // venobox
-  </script>
+</script>
 </body>
 
 </html>
